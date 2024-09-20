@@ -1,0 +1,11 @@
+{
+    "home": {
+      "title": "Bienvenido a la Página de Inicio",
+      "description": "Esta es la página de inicio de nuestra increíble aplicación React."
+    },
+    "about": {
+      "title": "Sobre Nosotros",
+      "description": "Somos una empresa dedicada a entregar aplicaciones web de alta calidad."
+    }
+  }
+  

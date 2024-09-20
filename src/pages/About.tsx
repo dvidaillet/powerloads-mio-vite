@@ -1,14 +1,14 @@
-function About() {
+import { useTranslation } from "react-i18next";
+
+const About = () => {
+  const { t } = useTranslation();
+
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>About Us</h1>
-      <p>
-        We are a company dedicated to delivering high-quality web applications.
-        Our mission is to create intuitive, scalable, and modern applications to
-        meet your needs.
-      </p>
+    <div>
+      <h1>{t("about.title")}</h1>
+      <p>{t("about.description")}</p>
     </div>
   );
-}
+};
 
 export default About;

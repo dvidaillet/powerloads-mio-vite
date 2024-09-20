@@ -1,11 +1,14 @@
+import { useTranslation } from "react-i18next";
 
-function Home() {
+const Home = () => {
+  const { t } = useTranslation();
+
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Welcome to the Home Page</h1>
-      <p>This is the home page of our awesome React app. Enjoy exploring!</p>
+    <div>
+      <h1>{t("home.title")}</h1>
+      <p>{t("home.description")}</p>
     </div>
   );
-}
+};
 
 export default Home;
