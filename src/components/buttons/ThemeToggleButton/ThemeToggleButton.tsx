@@ -1,5 +1,8 @@
 import { useContext } from "react";
 import { ThemeContext } from "../../../context/ThemeContext";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import { IconButton } from "@mui/material";
 
 const ThemeToggleButton = () => {
   const themeContext = useContext(ThemeContext);
@@ -11,9 +14,10 @@ const ThemeToggleButton = () => {
   const { theme, toggleTheme } = themeContext;
 
   return (
-    <button onClick={toggleTheme}>
-      Switch to {theme === "light" ? "Dark" : "Light"} Mode
-    </button>
+    <IconButton onClick={toggleTheme} color="primary">
+      {/* {theme === "light" ? "Dark" : "Light"} Mode */}
+      {theme === "light" ? <DarkModeIcon /> : <LightModeIcon />}
+    </IconButton>
   );
 };
 
