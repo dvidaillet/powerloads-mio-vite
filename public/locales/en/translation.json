@@ -1,11 +1,15 @@
 {
-    "home": {
-      "title": "Welcome to the Home Page",
-      "description": "This is the home page of our awesome React app."
-    },
-    "about": {
-      "title": "About Us",
-      "description": "We are a company dedicated to delivering high-quality web applications."
-    }
+  "homePanel": {
+    "panel": "Panel",
+    "users": "Users",
+    "loads": "Loads"
+  },
+  "home": {
+    "title": "Welcome to the Home Page",
+    "description": "This is the home page of our awesome React app."
+  },
+  "about": {
+    "title": "About Us",
+    "description": "We are a company dedicated to delivering high-quality web applications."
   }
-  
+}

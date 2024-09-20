@@ -14,8 +14,7 @@ const ThemeToggleButton = () => {
   const { theme, toggleTheme } = themeContext;
 
   return (
-    <IconButton onClick={toggleTheme} color="primary">
-      {/* {theme === "light" ? "Dark" : "Light"} Mode */}
+    <IconButton onClick={toggleTheme} style={{ color: "white" }}>
       {theme === "light" ? <DarkModeIcon /> : <LightModeIcon />}
     </IconButton>
   );
