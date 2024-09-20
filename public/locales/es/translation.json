@@ -2,7 +2,8 @@
   "homePanel": {
     "panel": "Panel",
     "users": "Usuarios",
-    "loads": "Cargas"
+    "loads": "Cargas",
+    "support": "Soporte"
   },
   "home": {
     "title": "Bienvenido a la Página de Inicio",

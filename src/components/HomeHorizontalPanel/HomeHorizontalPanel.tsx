@@ -1,28 +1,33 @@
-import { AppBar, Toolbar, Typography, Button } from "@mui/material";
+import { AppBar, Toolbar, Button, IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ThemeToggleButton from "../buttons/ThemeToggleButton/ThemeToggleButton";
 import LanguageMenu from "../LanguageMenu/LanguageMenu";
+import HomeIcon from "@mui/icons-material/Home";
 
 const HomeHorizontalPanel = () => {
   const { t } = useTranslation();
   return (
     <AppBar position="static" color="primary">
       <Toolbar style={{ display: "flex", justifyContent: "space-between" }}>
-        <Typography variant="h6">
+        <IconButton>
           <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-            {t("homePanel.panel")}
+            {/* {t("homePanel.panel")} */}
+            <HomeIcon />
           </Link>
-        </Typography>
+        </IconButton>
         <div>
           <Button>
-            <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+            <Link
+              to="/dashboard"
+              style={{ textDecoration: "none", color: "white" }}
+            >
               {t("homePanel.panel")}
             </Link>
           </Button>
           <Button color="inherit">
             <Link
-              to="/usuarios"
+              to="/users"
               style={{ textDecoration: "none", color: "white" }}
             >
               {t("homePanel.users")}
@@ -30,7 +35,7 @@ const HomeHorizontalPanel = () => {
           </Button>
           <Button color="inherit">
             <Link
-              to="/cargas"
+              to="/loads"
               style={{ textDecoration: "none", color: "white" }}
             >
               {t("homePanel.loads")}
@@ -38,18 +43,10 @@ const HomeHorizontalPanel = () => {
           </Button>
           <Button color="inherit">
             <Link
-              to="/incidencias"
+              to="/support"
               style={{ textDecoration: "none", color: "white" }}
             >
-              Incidencias
-            </Link>
-          </Button>
-          <Button color="inherit">
-            <Link
-              to="/soporte"
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              Soporte
+              {t("homePanel.support")}
             </Link>
           </Button>
           <ThemeToggleButton />

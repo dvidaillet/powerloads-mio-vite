@@ -24,7 +24,7 @@ const LanguageMenu = () => {
   };
 
   return (
-    <div>
+    <>
       <Button onClick={handleClick} style={{ color: "white" }}>
         {language} {/* Mostrar el idioma seleccionado */}
       </Button>
@@ -42,7 +42,7 @@ const LanguageMenu = () => {
           EN
         </MenuItem>
       </Menu>
-    </div>
+    </>
   );
 };
 

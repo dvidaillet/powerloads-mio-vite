@@ -2,7 +2,8 @@
   "homePanel": {
     "panel": "Panel",
     "users": "Users",
-    "loads": "Loads"
+    "loads": "Loads",
+    "support": "Loads"
   },
   "home": {
     "title": "Welcome to the Home Page",

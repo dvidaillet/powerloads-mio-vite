@@ -6,6 +6,10 @@ import HomeHorizontalPanel from "./components/HomeHorizontalPanel/HomeHorizontal
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Navbar from "./components/Navbar/Navbar";
+import Loads from "./pages/Loads";
+import Users from "./pages/Users";
+import Incidences from "./pages/Incidences";
+import Dashboard from "./pages/Dashboard";
 
 const App = () => {
   return (
@@ -19,6 +23,10 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/loads" element={<Loads />} />
+          <Route path="/support" element={<Incidences />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </Router>
     </div>
