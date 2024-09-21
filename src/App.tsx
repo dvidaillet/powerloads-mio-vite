@@ -13,21 +13,21 @@ import Dashboard from "./pages/Dashboard";
 
 const App = () => {
   return (
-    <div className="app-container">
+    <div>
       <Router>
-        <header>
-          <HomeHorizontalPanel />
-        </header>
         <Navbar />
+        <HomeHorizontalPanel />
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/users" element={<Users />} />
-          <Route path="/loads" element={<Loads />} />
-          <Route path="/support" element={<Incidences />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-        </Routes>
+        <div className="app-container">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/users" element={<Users />} />
+            <Route path="/loads" element={<Loads />} />
+            <Route path="/support" element={<Incidences />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+          </Routes>
+        </div>
       </Router>
     </div>
   );

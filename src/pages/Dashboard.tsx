@@ -5,8 +5,8 @@ const Dashboard = () => {
 
   return (
     <div>
-      <h1>{t("home.title")}</h1>
-      <p>{t("home.description")}</p>
+      <h1>{t("panel.title")}</h1>
+      <p>{t("panel.description")}</p>
     </div>
   );
 };

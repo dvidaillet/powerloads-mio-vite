@@ -3,7 +3,7 @@
     "panel": "Panel",
     "users": "Users",
     "loads": "Loads",
-    "support": "Loads"
+    "support": "Support"
   },
   "home": {
     "title": "Welcome to the Home Page",
@@ -11,6 +11,22 @@
   },
   "about": {
     "title": "About Us",
+    "description": "We are a company dedicated to delivering high-quality web applications."
+  },
+  "incidence": {
+    "title": "Manage your incidences",
+    "description": "We are a company dedicated to delivering high-quality web applications."
+  },
+  "loads": {
+    "title": "Manage your loads",
+    "description": "We are a company dedicated to delivering high-quality web applications."
+  },
+  "users": {
+    "title": "Manage your users",
+    "description": "We are a company dedicated to delivering high-quality web applications."
+  },
+  "panel": {
+    "title": "Dashboard",
     "description": "We are a company dedicated to delivering high-quality web applications."
   }
 }

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import "../../i18n";
-import { Button, Menu, MenuItem } from "@mui/material";
+import { IconButton, Menu, MenuItem, Typography } from "@mui/material";
 
 const LanguageMenu = () => {
   const { i18n } = useTranslation();
@@ -25,21 +25,39 @@ const LanguageMenu = () => {
 
   return (
     <>
-      <Button onClick={handleClick} style={{ color: "white" }}>
-        {language} {/* Mostrar el idioma seleccionado */}
-      </Button>
+      <IconButton
+        onClick={handleClick}
+        style={{ color: "primary", marginTop: -5 }}
+      >
+        <Typography variant="h6" fontSize={16} fontWeight={600} color="primary">
+          {language.toUpperCase()}
+        </Typography>
+      </IconButton>
       <Menu
-        // style={{ color: "white" }}
         color="inherit"
         anchorEl={anchorEl}
         open={Boolean(anchorEl)}
         onClose={() => setAnchorEl(null)}
       >
-        <MenuItem color="inherit" onClick={() => handleClose("es")}>
-          ES
+        <MenuItem color="primary" onClick={() => handleClose("es")}>
+          <Typography
+            variant="h6"
+            fontSize={16}
+            fontWeight={600}
+            color="primary"
+          >
+            ES
+          </Typography>
         </MenuItem>
-        <MenuItem color="inherit" onClick={() => handleClose("en")}>
-          EN
+        <MenuItem color="primary" onClick={() => handleClose("en")}>
+          <Typography
+            variant="h6"
+            fontSize={16}
+            fontWeight={600}
+            color="primary"
+          >
+            EN
+          </Typography>
         </MenuItem>
       </Menu>
     </>

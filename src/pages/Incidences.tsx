@@ -5,8 +5,8 @@ const Incidences = () => {
 
   return (
     <div>
-      <h1>{t("home.title")}</h1>
-      <p>{t("home.description")}</p>
+      <h1>{t("incidence.title")}</h1>
+      <p>{t("incidence.description")}</p>
     </div>
   );
 };

@@ -14,8 +14,12 @@ const ThemeToggleButton = () => {
   const { theme, toggleTheme } = themeContext;
 
   return (
-    <IconButton onClick={toggleTheme} style={{ color: "white" }}>
-      {theme === "light" ? <DarkModeIcon /> : <LightModeIcon />}
+    <IconButton onClick={toggleTheme} style={{ marginTop: -3 }}>
+      {theme === "light" ? (
+        <DarkModeIcon color="primary" style={{ width: 20, height: 20 }} />
+      ) : (
+        <LightModeIcon color="primary" style={{ width: 20, height: 20 }} />
+      )}
     </IconButton>
   );
 };

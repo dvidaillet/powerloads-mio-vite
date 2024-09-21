@@ -12,5 +12,21 @@
   "about": {
     "title": "Sobre Nosotros",
     "description": "Somos una empresa dedicada a entregar aplicaciones web de alta calidad."
+  },
+  "incidence": {
+    "title": "Gestiona tus incidencias",
+    "description": "We are a company dedicated to delivering high-quality web applications."
+  },
+  "loads": {
+    "title": "Gestiona tus cargas",
+    "description": "We are a company dedicated to delivering high-quality web applications."
+  },
+  "users": {
+    "title": "Gestiona tus usuarios",
+    "description": "We are a company dedicated to delivering high-quality web applications."
+  },
+  "panel": {
+    "title": "Gestiona tus usuarios",
+    "description": "We are a company dedicated to delivering high-quality web applications."
   }
 }
