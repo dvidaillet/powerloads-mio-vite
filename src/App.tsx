@@ -5,7 +5,6 @@ import "./App.css";
 import HomeHorizontalPanel from "./components/HomeHorizontalPanel/HomeHorizontalPanel";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Navbar from "./components/Navbar/Navbar";
 import Loads from "./pages/Loads";
 import Users from "./pages/Users";
 import Incidences from "./pages/Incidences";
@@ -15,7 +14,6 @@ const App = () => {
   return (
     <div>
       <Router>
-        <Navbar />
         <HomeHorizontalPanel />
 
         <div className="app-container">

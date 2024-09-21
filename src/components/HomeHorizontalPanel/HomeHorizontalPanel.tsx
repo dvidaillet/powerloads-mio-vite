@@ -11,11 +11,7 @@ import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 const HomeHorizontalPanel = () => {
   const { t } = useTranslation();
   return (
-    <AppBar
-      position="static"
-      // color="inherit"
-      style={{ backgroundColor: "#F3F4F9" }}
-    >
+    <AppBar position="static" style={{ backgroundColor: "#F3F4F9" }}>
       <Toolbar
         style={{ display: "flex", justifyContent: "space-between" }}
         className="home-panel-container"
@@ -25,6 +21,11 @@ const HomeHorizontalPanel = () => {
             <HomeIcon color="primary" />
           </Link>
         </IconButton>
+        <Link to="/about" style={{ margin: "0 10px" }}>
+          <Typography variant="h6" fontSize={14} color="grey">
+            {t("about.linkText")}
+          </Typography>
+        </Link>
         <div>
           <Button style={{ padding: "15px 35px" }}>
             <Link to="/dashboard" style={{ textDecoration: "none" }}>

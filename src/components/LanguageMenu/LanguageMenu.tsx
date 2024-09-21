@@ -27,9 +27,9 @@ const LanguageMenu = () => {
     <>
       <IconButton
         onClick={handleClick}
-        style={{ color: "primary", marginTop: -5 }}
+        style={{ color: "primary", marginTop: -2 }}
       >
-        <Typography variant="h6" fontSize={16} fontWeight={600} color="primary">
+        <Typography variant="body2" fontSize={16} fontWeight={600} color="primary">
           {language.toUpperCase()}
         </Typography>
       </IconButton>
@@ -41,7 +41,7 @@ const LanguageMenu = () => {
       >
         <MenuItem color="primary" onClick={() => handleClose("es")}>
           <Typography
-            variant="h6"
+            variant="body2"
             fontSize={16}
             fontWeight={600}
             color="primary"
@@ -51,7 +51,7 @@ const LanguageMenu = () => {
         </MenuItem>
         <MenuItem color="primary" onClick={() => handleClose("en")}>
           <Typography
-            variant="h6"
+            variant="body2"
             fontSize={16}
             fontWeight={600}
             color="primary"
