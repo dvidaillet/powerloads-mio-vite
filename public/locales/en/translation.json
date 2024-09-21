@@ -6,6 +6,7 @@
     "support": "Support"
   },
   "home": {
+    "linkText": "Home",
     "title": "Welcome to the Home Page",
     "description": "This is the home page of our awesome React app."
   },
@@ -29,5 +30,11 @@
   "panel": {
     "title": "Dashboard",
     "description": "We are a company dedicated to delivering high-quality web applications."
+  },
+  "messagge": {
+    "linkText": "Messagge"
+  },
+  "notifications": {
+    "linkText": "Notifications"
   }
 }

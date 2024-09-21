@@ -28,13 +28,15 @@ const NavButton = ({ to, text }: { to: string; text: string }) => (
 
 const NavIconButton = ({
   to,
+  text,
   IconComponent,
 }: {
   to: string;
+  text?: string;
   IconComponent: React.ElementType;
 }) => (
   <IconButton
-    title="ass"
+    title={text}
     sx={{
       borderRadius: "8px",
       marginX: "3px",
@@ -63,29 +65,45 @@ const HomeHorizontalPanel = () => {
         sx={{ display: "flex", justifyContent: "space-between" }}
         className="home-panel-container"
       >
-        {/* Sección del icono Home */}
-        <NavIconButton to="/" IconComponent={HomeIcon} />
+        <NavIconButton
+          to="/"
+          IconComponent={HomeIcon}
+          text={t("home.linkText")}
+        />
 
-        {/* Enlace a 'About' */}
         <Link to="/about" style={{ margin: "0 10px" }}>
           <Typography variant="h6" fontSize={14} color="grey">
             {t("about.linkText")}
           </Typography>
         </Link>
 
-        {/* Sección de botones y otros iconos */}
-        <Box sx={{ display: "flex", alignItems: "center" }}>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
           <NavButton to="/dashboard" text={t("homePanel.panel")} />
           <NavButton to="/users" text={t("homePanel.users")} />
           <NavButton to="/loads" text={t("homePanel.loads")} />
           <NavButton to="/support" text={t("homePanel.support")} />
 
-          {/* Iconos de perfil, mensajes y notificaciones */}
-          <NavIconButton to="/" IconComponent={PersonOutlineIcon} />
-          <NavIconButton to="/" IconComponent={CommentIcon} />
-          <NavIconButton to="/" IconComponent={NotificationsNoneIcon} />
+          <NavIconButton
+            to="/"
+            IconComponent={PersonOutlineIcon}
+            text={t("messagge.linkText")}
+          />
+          <NavIconButton
+            to="/"
+            IconComponent={CommentIcon}
+            text={t("messagge.linkText")}
+          />
+          <NavIconButton
+            to="/"
+            IconComponent={NotificationsNoneIcon}
+            text="notifications.linkText"
+          />
 
-          {/* Menú de idioma y botón de tema */}
           <LanguageMenu />
           <ThemeToggleButton />
         </Box>

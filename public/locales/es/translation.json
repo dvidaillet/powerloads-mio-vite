@@ -6,6 +6,7 @@
     "support": "Soporte"
   },
   "home": {
+    "linkText": "Inicio",
     "title": "Bienvenido a la Página de Inicio",
     "description": "Esta es la página de inicio de nuestra increíble aplicación React."
   },
@@ -29,5 +30,11 @@
   "panel": {
     "title": "Dashboard",
     "description": "We are a company dedicated to delivering high-quality web applications."
+  },
+  "messagge": {
+    "linkText": "Mensajes"
+  },
+  "notifications": {
+    "linkText": "Notificaciones"
   }
 }
