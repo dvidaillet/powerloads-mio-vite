@@ -1,4 +1,11 @@
-import { AppBar, Toolbar, Button, IconButton, Typography } from "@mui/material";
+import {
+  AppBar,
+  Toolbar,
+  Button,
+  IconButton,
+  Typography,
+  Box,
+} from "@mui/material";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ThemeToggleButton from "../buttons/ThemeToggleButton/ThemeToggleButton";
@@ -8,91 +15,80 @@ import CommentIcon from "@mui/icons-material/Comment";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 
+// Componente reutilizable para botones de navegación
+const NavButton = ({ to, text }: { to: string; text: string }) => (
+  <Button sx={{ padding: "15px 35px" }}>
+    <Link to={to} style={{ textDecoration: "none" }}>
+      <Typography variant="h6" fontSize={14} fontWeight={600} color="grey">
+        {text}
+      </Typography>
+    </Link>
+  </Button>
+);
+
+const NavIconButton = ({
+  to,
+  IconComponent,
+}: {
+  to: string;
+  IconComponent: React.ElementType;
+}) => (
+  <IconButton
+    title="ass"
+    sx={{
+      borderRadius: "8px",
+      marginX: "3px",
+      height: "40px",
+      width: "40px",
+      backgroundColor: "#f5e4e4", // Rosado claro
+      boxShadow: "0 2px 4px rgba(224, 75, 100, 0.808)",
+      "&:hover": {
+        backgroundColor: "#F8BBD0", // Un tono más oscuro en hover
+        boxShadow: "0 0px 0px rgba(206, 33, 62, 0.808)",
+      },
+    }}
+  >
+    <Link to={to}>
+      <IconComponent color="primary" sx={{ with: "20px", height: "20px" }} />
+    </Link>
+  </IconButton>
+);
+
 const HomeHorizontalPanel = () => {
   const { t } = useTranslation();
+
   return (
-    <AppBar position="static" style={{ backgroundColor: "#F3F4F9" }}>
+    <AppBar position="static" sx={{ backgroundColor: "#F3F4F9" }}>
       <Toolbar
-        style={{ display: "flex", justifyContent: "space-between" }}
+        sx={{ display: "flex", justifyContent: "space-between" }}
         className="home-panel-container"
       >
-        <IconButton>
-          <Link to="/">
-            <HomeIcon color="primary" />
-          </Link>
-        </IconButton>
+        {/* Sección del icono Home */}
+        <NavIconButton to="/" IconComponent={HomeIcon} />
+
+        {/* Enlace a 'About' */}
         <Link to="/about" style={{ margin: "0 10px" }}>
           <Typography variant="h6" fontSize={14} color="grey">
             {t("about.linkText")}
           </Typography>
         </Link>
-        <div>
-          <Button style={{ padding: "15px 35px" }}>
-            <Link to="/dashboard" style={{ textDecoration: "none" }}>
-              <Typography
-                variant="h6"
-                fontSize={14}
-                fontWeight={600}
-                color="grey"
-              >
-                {t("homePanel.panel")}
-              </Typography>
-            </Link>
-          </Button>
-          <Button color="inherit" style={{ padding: "15px 35px" }}>
-            <Link to="/users" style={{ textDecoration: "none" }}>
-              <Typography
-                variant="h6"
-                fontSize={14}
-                fontWeight={600}
-                color="grey"
-              >
-                {t("homePanel.users")}
-              </Typography>
-            </Link>
-          </Button>
-          <Button color="inherit" style={{ padding: "15px 35px" }}>
-            <Link to="/loads" style={{ textDecoration: "none" }}>
-              <Typography
-                variant="h6"
-                fontSize={14}
-                fontWeight={600}
-                color="grey"
-              >
-                {t("homePanel.loads")}
-              </Typography>
-            </Link>
-          </Button>
-          <Button color="inherit" style={{ padding: "15px 35px" }}>
-            <Link to="/support" style={{ textDecoration: "none" }}>
-              <Typography
-                variant="h6"
-                fontSize={14}
-                fontWeight={600}
-                color="grey"
-              >
-                {t("homePanel.support")}
-              </Typography>
-            </Link>
-          </Button>
-          <IconButton>
-            <Link to="/">
-              <PersonOutlineIcon color="primary" />
-            </Link>
-          </IconButton>
-          <IconButton>
-            <Link to="/">
-              <CommentIcon color="primary" />
-            </Link>
-          </IconButton>
-          <IconButton>
-            <Link to="/">
-              <NotificationsNoneIcon color="primary" />
-            </Link>
-          </IconButton>
+
+        {/* Sección de botones y otros iconos */}
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          <NavButton to="/dashboard" text={t("homePanel.panel")} />
+          <NavButton to="/users" text={t("homePanel.users")} />
+          <NavButton to="/loads" text={t("homePanel.loads")} />
+          <NavButton to="/support" text={t("homePanel.support")} />
+
+          {/* Iconos de perfil, mensajes y notificaciones */}
+          <NavIconButton to="/" IconComponent={PersonOutlineIcon} />
+          <NavIconButton to="/" IconComponent={CommentIcon} />
+          <NavIconButton to="/" IconComponent={NotificationsNoneIcon} />
+
+          {/* Menú de idioma y botón de tema */}
           <LanguageMenu />
           <ThemeToggleButton />
-        </div>
+        </Box>
       </Toolbar>
     </AppBar>
   );

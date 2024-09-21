@@ -11,7 +11,14 @@ function PagesHeader({ title, subtitle }: PagesHeaderProps) {
   return (
     <>
       <Grid2 textAlign={"center"} marginY={3}>
-        <Typography variant="h4" marginBottom={2}>{t(title)}</Typography>
+        <Typography
+          color="primary"
+          fontWeight={600}
+          variant="h4"
+          marginBottom={2}
+        >
+          {t(title)}
+        </Typography>
         <Typography variant="body1">{t(subtitle || "")}</Typography>
       </Grid2>
     </>
