@@ -1,7 +1,7 @@
 // import { useTranslation } from "react-i18next";
 import PagesHeader from "../components/PagesHeader/PagesHeader";
 
-const About = () => {
+const AboutPage = () => {
   // const { t } = useTranslation();
 
   return (
@@ -11,4 +11,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutPage;

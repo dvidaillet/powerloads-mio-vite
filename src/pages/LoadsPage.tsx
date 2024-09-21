@@ -1,14 +1,14 @@
 // import { useTranslation } from "react-i18next";
 import PagesHeader from "../components/PagesHeader/PagesHeader";
 
-const Users = () => {
+const LoadsPage = () => {
   // const { t } = useTranslation();
 
   return (
     <>
-      <PagesHeader title="users.title" subtitle="users.description" />
+      <PagesHeader title="loads.title" subtitle="loads.description" />
     </>
   );
 };
 
-export default Users;
+export default LoadsPage;
