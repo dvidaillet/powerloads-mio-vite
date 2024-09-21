@@ -1,13 +1,13 @@
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
+import PagesHeader from "../components/PagesHeader/PagesHeader";
 
 const Dashboard = () => {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
   return (
-    <div>
-      <h1>{t("panel.title")}</h1>
-      <p>{t("panel.description")}</p>
-    </div>
+    <>
+      <PagesHeader title="panel.title" subtitle="panel.description" />
+    </>
   );
 };
 

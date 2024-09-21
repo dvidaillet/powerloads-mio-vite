@@ -1,13 +1,13 @@
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
+import PagesHeader from "../components/PagesHeader/PagesHeader";
 
 const About = () => {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
   return (
-    <div>
-      <h1>{t("about.title")}</h1>
-      <p>{t("about.description")}</p>
-    </div>
+    <>
+      <PagesHeader title="about.title" subtitle="about.description" />
+    </>
   );
 };
 
