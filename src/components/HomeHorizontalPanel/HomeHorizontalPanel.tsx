@@ -47,8 +47,8 @@ const NavIconButton = ({
     sx={{
       borderRadius: "8px",
       marginX: "3px",
-      height: "35px",
-      width: "35px",
+      height: "38px",
+      width: "38px",
       backgroundColor: "#f5e4e4", // Rosado claro
       boxShadow: "0 2px 4px rgba(224, 75, 100, 0.808)",
       "&:hover": {
@@ -124,8 +124,8 @@ const HomeHorizontalPanel = () => {
             sx={{
               borderRadius: "8px",
               marginX: "3px",
-              height: "35px",
-              width: "35px",
+              height: "38px",
+              width: "38px",
               backgroundColor: "#f5e4e4",
               boxShadow: "0 2px 4px rgba(224, 75, 100, 0.808)",
               "&:hover": {
@@ -158,7 +158,11 @@ const HomeHorizontalPanel = () => {
                 flexDirection: "column",
               }}
             >
-              <Avatar src={user.avatar} alt={user.firstName} sx={{ width: 70, height: 70 }} />
+              <Avatar
+                src={user.avatar}
+                alt={user.firstName}
+                sx={{ width: 70, height: 70 }}
+              />
               <Typography variant="body1" fontWeight="bold">
                 {user.firstName} {user.lastName}
               </Typography>
@@ -178,12 +182,12 @@ const HomeHorizontalPanel = () => {
           </Menu>
 
           <NavIconButton
-            to="/"
+            to="/messages"
             IconComponent={MarkEmailUnreadOutlinedIcon}
             text={t("messagge.linkText")}
           />
           <NavIconButton
-            to="/"
+            to="/notifications"
             IconComponent={NotificationsNoneIcon}
             text="notifications.linkText"
           />

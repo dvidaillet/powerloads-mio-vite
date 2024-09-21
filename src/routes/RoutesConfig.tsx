@@ -5,6 +5,9 @@ import UsersPage from "../pages/UsersPage";
 import LoadsPage from "../pages/LoadsPage";
 import IncidencesPage from "../pages/IncidencesPage";
 import DashboardPage from "../pages/DashboardPage";
+import ProfilePage from "../pages/ProfilePage";
+import MessagesPage from "../pages/MessagesPage";
+import NotificationPage from "../pages/NotificationPage";
 
 const RoutesConfig = () => (
   <Routes>
@@ -14,6 +17,9 @@ const RoutesConfig = () => (
     <Route path="/loads" element={<LoadsPage />} />
     <Route path="/support" element={<IncidencesPage />} />
     <Route path="/dashboard" element={<DashboardPage />} />
+    <Route path="/profile" element={<ProfilePage />} />
+    <Route path="/messages" element={<MessagesPage />} />
+    <Route path="/notifications" element={<NotificationPage />} />
   </Routes>
 );
 
