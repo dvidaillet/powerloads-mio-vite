@@ -1,14 +1,8 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import { BrowserRouter as Router } from "react-router-dom";
 import "./i18n";
 import "./App.css";
 import HomeHorizontalPanel from "./components/HomeHorizontalPanel/HomeHorizontalPanel";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Loads from "./pages/Loads";
-import Users from "./pages/Users";
-import Incidences from "./pages/Incidences";
-import Dashboard from "./pages/Dashboard";
+import RoutesConfig from "./src/routes/RoutesConfig";
 
 const App = () => {
   return (
@@ -17,14 +11,7 @@ const App = () => {
         <HomeHorizontalPanel />
 
         <div className="app-container">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/users" element={<Users />} />
-            <Route path="/loads" element={<Loads />} />
-            <Route path="/support" element={<Incidences />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-          </Routes>
+          <RoutesConfig />
         </div>
       </Router>
     </div>

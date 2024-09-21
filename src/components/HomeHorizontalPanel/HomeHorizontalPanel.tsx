@@ -40,8 +40,8 @@ const NavIconButton = ({
     sx={{
       borderRadius: "8px",
       marginX: "3px",
-      height: "40px",
-      width: "40px",
+      height: "33px",
+      width: "35px",
       backgroundColor: "#f5e4e4", // Rosado claro
       boxShadow: "0 2px 4px rgba(224, 75, 100, 0.808)",
       "&:hover": {
