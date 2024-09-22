@@ -11,7 +11,7 @@ export const UserColumns: GridColDef[] = [
       <Avatar
         src={params.value}
         alt={params.row.nombre}
-        sx={{ width: 45, height: 45 }}
+        sx={{ width: 45, height: 45, marginLeft:1 }}
       />
     ),
     headerAlign: "center",

@@ -30,6 +30,7 @@ const UsersTableComponent = () => {
             rows={userData}
             columns={UserColumns}
             pageSizeOptions={[5, 10, 15, 20]}
+            disableRowSelectionOnClick
           />
         </div>
       ) : (
