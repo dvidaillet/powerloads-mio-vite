@@ -22,3 +22,9 @@
     padding: 5px;
   }
 }
+
+.custom-columns-header {
+  background-color: #c40f40; /* Primary color */
+  color: white;
+  font-size: medium;
+}

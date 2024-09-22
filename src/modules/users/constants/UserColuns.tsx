@@ -1,43 +1,70 @@
 import { GridColDef } from "@mui/x-data-grid";
-import { Avatar, Button } from "@mui/material";
+import { Avatar, Button, IconButton } from "@mui/material";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { IUser } from "../interfaces/user";
 
 export const UserColumns: GridColDef[] = [
   {
     field: "avatar",
-    headerName: "Avatar",
-    width: 100,
-    renderCell: (params) => <Avatar src={params.value} alt={params.row.nombre} />,
+    width: 85,
+    renderCell: (params) => (
+      <Avatar
+        src={params.value}
+        alt={params.row.nombre}
+        sx={{ width: 45, height: 45 }}
+      />
+    ),
+    headerAlign: "center",
+    align: "center",
+    headerClassName: "custom-columns-header",
   },
   {
     field: "firstName",
     headerName: "Nombre",
     width: 150,
+    headerAlign: "center",
+    align: "center",
+    headerClassName: "custom-columns-header",
   },
   {
     field: "lastName",
     headerName: "Apellidos",
     width: 150,
+    headerAlign: "center",
+    align: "center",
+    headerClassName: "custom-columns-header",
   },
   {
     field: "company",
     headerName: "Compañía",
     width: 200,
+    headerAlign: "center",
+    align: "center",
+    headerClassName: "custom-columns-header",
   },
   {
     field: "phone",
     headerName: "Teléfono",
     width: 150,
+    headerAlign: "center",
+    align: "center",
+    headerClassName: "custom-columns-header",
   },
   {
     field: "email",
     headerName: "Email",
     width: 200,
+    headerAlign: "center",
+    align: "center",
+    headerClassName: "custom-columns-header",
   },
   {
     field: "isActive",
     headerName: "Activo",
     width: 100,
+    align: "center",
+    headerAlign: "center",
+    headerClassName: "custom-columns-header",
     renderCell: (params) =>
       params.value ? (
         <Button variant="contained" color="success">
@@ -52,11 +79,14 @@ export const UserColumns: GridColDef[] = [
   {
     field: "acciones",
     headerName: "Acciones",
-    width: 150,
+    width: 90,
+    headerAlign: "center",
+    align: "center",
+    headerClassName: "custom-columns-header",
     renderCell: (params) => (
-      <Button variant="outlined" onClick={() => handleMenuClick(params.row)}>
-        Acciones
-      </Button>
+      <IconButton onClick={() => handleMenuClick(params.row)}>
+        <MoreHorizIcon />
+      </IconButton>
     ),
   },
 ];
