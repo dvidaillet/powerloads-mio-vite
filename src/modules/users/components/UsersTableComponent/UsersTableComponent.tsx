@@ -5,11 +5,12 @@ import { DataGrid } from "@mui/x-data-grid";
 import { UserColumns } from "../../constants/UserColuns";
 import { Button } from "@mui/material";
 import AddUserForm from "../AddUserForm/AddUserForm";
+import { initialUserValues } from "../../constants/InitialUerValue";
 
 const UsersTableComponent = () => {
   const [userData, setUserData] = useState<IUser[] | null>(null);
   const [open, setOpen] = useState(false);
-  const [newUser, setNewUser] = useState({ name: "", email: "" }); // Estado del nuevo usuario
+  const [newUser, setNewUser] = useState<IUser>(initialUserValues); // Estado del nuevo usuario
 
   const handleAddUser = () => {
     // Aquí puedes hacer la lógica para enviar el nuevo usuario a la API

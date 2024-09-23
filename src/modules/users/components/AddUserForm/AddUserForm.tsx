@@ -36,28 +36,40 @@ const AddUserForm = ({ open, handleClose, onAddUser }: AddUserFormProps) => {
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          width: 400,
+          width: 600,
           bgcolor: "background.paper",
           boxShadow: 24,
-          p: 4,
           borderRadius: 2,
         }}
       >
+        <Box
+          sx={{ backgroundColor: "#c40f40", paddingLeft: 5, paddingTop: 2 }}
+          height={60}
+          alignContent={"center"}
+        >
+          <Typography
+            variant="h6"
+            fontWeight={600}
+            color="white"
+            component="h2"
+            sx={{ mb: 2 }}
+          >
+            Agregar Nuevo Usuario
+          </Typography>
+        </Box>
         <Box
           component="form"
           noValidate
           onSubmit={handleSubmit(onSubmit)}
           sx={{
-            maxWidth: 400,
+            maxWidth: 540,
             margin: "auto",
             display: "flex",
             flexDirection: "column",
             gap: 2,
+            p: 4,
           }}
         >
-          <Typography variant="h6" component="h2" sx={{ mb: 2 }}>
-            Agregar Nuevo Usuario
-          </Typography>
           <FormInputComponent
             name="name"
             control={control}

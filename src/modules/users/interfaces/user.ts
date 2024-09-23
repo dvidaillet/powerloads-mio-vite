@@ -7,9 +7,9 @@ export interface IUser {
   address: string;
   company: string;
   avatar: string;
-  phone: string;
+  phone?: string;
   email: string;
   role: string;
-  createdAt: string;
-  updatedAt: string;
+  createdAt?: string;
+  updatedAt?: string;
 }
