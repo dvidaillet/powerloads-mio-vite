@@ -5,6 +5,21 @@
     "loads": "Cargas",
     "support": "Soporte"
   },
+  "buttons": {
+    "add": "Agregar",
+    "cancel": "Cancelar",
+    "loads": "Loads",
+    "support": "Support"
+  },
+  "headerColumns": {
+    "firstName": "Nombre",
+    "lastName": "Apellidos",
+    "email": "Correo",
+    "phone": "Teléfono",
+    "company": "Compañía",
+    "active": "Activo",
+    "actions": "Acciones"
+  },
   "home": {
     "linkText": "Inicio",
     "title": "Bienvenido a la Página de Inicio",
@@ -36,5 +51,12 @@
   },
   "notifications": {
     "linkText": "Notificaciones"
+  },
+  "formErrors": {
+    "frirstNameRequired": "El campo nombre es obligatorio",
+    "lastNameRequired": "El campo apellido es obligatorio",
+    "emailRequired": "El campo email es obligatorio",
+    "emailIncorrectFormat": "El formato del email es inválido",
+    "roleRequired": "Debe seleccionar un rol"
   }
 }

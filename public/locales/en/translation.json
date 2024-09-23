@@ -5,6 +5,21 @@
     "loads": "Loads",
     "support": "Support"
   },
+  "buttons": {
+    "add": "Add",
+    "cancel": "Cancel",
+    "loads": "Loads",
+    "support": "Support"
+  },
+  "headerColumns": {
+    "firstName": "Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "phone": "Phone",
+    "company": "Company",
+    "active": "Active",
+    "actions": "Actions"
+  },
   "home": {
     "linkText": "Home",
     "title": "Welcome to the Home Page",
@@ -36,5 +51,12 @@
   },
   "notifications": {
     "linkText": "Notifications"
+  },
+  "formErrors": {
+    "frirstNameRequired": "The first name field is required",
+    "lastNameRequired": "The last name field is required",
+    "emailRequired": "The email field is required",
+    "emailIncorrectFormat": "The email format is invalid",
+    "roleRequired": "You must select a role"
   }
 }

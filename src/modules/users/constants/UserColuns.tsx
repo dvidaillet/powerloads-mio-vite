@@ -6,21 +6,21 @@ import { IUser } from "../interfaces/user";
 export const UserColumns: GridColDef[] = [
   {
     field: "avatar",
+    headerName: "",
     width: 85,
     renderCell: (params) => (
       <Avatar
         src={params.value}
         alt={params.row.nombre}
-        sx={{ width: 45, height: 45, marginLeft:1 }}
+        sx={{ width: 45, height: 45, marginLeft: 1 }}
       />
     ),
-    headerAlign: "center",
     align: "center",
     headerClassName: "custom-columns-header",
   },
   {
     field: "firstName",
-    headerName: "Nombre",
+    headerName: "headerColumns.firstName",
     width: 150,
     headerAlign: "center",
     align: "center",
@@ -28,15 +28,23 @@ export const UserColumns: GridColDef[] = [
   },
   {
     field: "lastName",
-    headerName: "Apellidos",
-    width: 150,
+    headerName: "headerColumns.lastName",
+    width: 250,
+    headerAlign: "center",
+    align: "center",
+    headerClassName: "custom-columns-header",
+  },
+  {
+    field: "email",
+    headerName: "headerColumns.email",
+    width: 200,
     headerAlign: "center",
     align: "center",
     headerClassName: "custom-columns-header",
   },
   {
     field: "company",
-    headerName: "Compañía",
+    headerName: "headerColumns.company",
     width: 200,
     headerAlign: "center",
     align: "center",
@@ -44,23 +52,24 @@ export const UserColumns: GridColDef[] = [
   },
   {
     field: "phone",
-    headerName: "Teléfono",
+    headerName: "headerColumns.phone",
     width: 150,
     headerAlign: "center",
     align: "center",
     headerClassName: "custom-columns-header",
   },
   {
-    field: "email",
-    headerName: "Email",
-    width: 200,
+    field: "role",
+    headerName: "headerColumns.role",
+    width: 150,
     headerAlign: "center",
     align: "center",
     headerClassName: "custom-columns-header",
   },
+
   {
     field: "isActive",
-    headerName: "Activo",
+    headerName: "headerColumns.Activo",
     width: 100,
     align: "center",
     headerAlign: "center",
@@ -78,8 +87,8 @@ export const UserColumns: GridColDef[] = [
   },
   {
     field: "acciones",
-    headerName: "Acciones",
-    width: 90,
+    headerName: "headerColumns.actions",
+    width: 113,
     headerAlign: "center",
     align: "center",
     headerClassName: "custom-columns-header",

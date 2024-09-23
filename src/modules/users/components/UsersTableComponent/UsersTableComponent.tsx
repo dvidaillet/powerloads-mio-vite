@@ -39,11 +39,11 @@ const UsersTableComponent = () => {
 
   return (
     <div>
-      <Button variant="contained" color="primary" onClick={handleOpen}>
+      <Button variant="contained" color="primary" size="large" onClick={handleOpen}>
         Agregar Usuario
       </Button>
       {userData ? (
-        <div style={{ height: 500, width: "100%" }}>
+        <div style={{ height: 500, width: "100%", marginTop:20 }}>
           <DataGrid
             rows={userData}
             columns={UserColumns}

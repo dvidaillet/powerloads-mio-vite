@@ -1,8 +1,12 @@
-import * as yup from 'yup';
+import * as yup from "yup";
 
 // Esquema de validación
 export const userSchema = yup.object().shape({
-  name: yup.string().required("El nombre es obligatorio"),
-  email: yup.string().email("Formato de email inválido").required("El email es obligatorio"),
-  role: yup.string().required("El rol es obligatorio"),
+  firstName: yup.string().required("formErrors.frirstNameRequired"),
+  lastName: yup.string().required("formErrors.lastNameRequired"),
+  email: yup
+    .string()
+    .email("formErrors.emailIncorrectFormat")
+    .required("formErrors.emailRequired"),
+  role: yup.string().required("formErrors.roleRequired"),
 });

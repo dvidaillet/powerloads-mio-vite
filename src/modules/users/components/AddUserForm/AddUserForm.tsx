@@ -12,6 +12,7 @@ import { userSchema } from "../../constants/userSchema";
 import FormInputComponent from "../../../../components/Form/Input/FormInput";
 import FormSelectComponent from "../../../../components/Form/Select/FormSelect";
 import CloseIcon from "@mui/icons-material/Close";
+import { useTranslation } from "react-i18next";
 
 type AddUserFormProps = {
   open: boolean;
@@ -20,6 +21,8 @@ type AddUserFormProps = {
   onAddUser: (data: any) => void;
 };
 const AddUserForm = ({ open, handleClose, onAddUser }: AddUserFormProps) => {
+  const { t } = useTranslation();
+
   const {
     control,
     handleSubmit,
@@ -27,7 +30,8 @@ const AddUserForm = ({ open, handleClose, onAddUser }: AddUserFormProps) => {
   } = useForm({
     resolver: yupResolver(userSchema), // Resolver de Yup para las validaciones
     defaultValues: {
-      name: "Juan",
+      firstName: "Juan",
+      lastName: "Panfilo",
       email: "juan@example.com",
     },
   });
@@ -48,11 +52,18 @@ const AddUserForm = ({ open, handleClose, onAddUser }: AddUserFormProps) => {
           width: 600,
           bgcolor: "background.paper",
           boxShadow: 24,
-          borderRadius: 2,
+          borderRadius: 3,
         }}
       >
         <Box
-          sx={{ backgroundColor: "#c40f40", px: 5, paddingTop: 2 }}
+          sx={{
+            backgroundColor: "#c40f40",
+            pl: 4,
+            pr: 2,
+            paddingTop: 1,
+            borderTopRightRadius: 3,
+            borderTopLeftRadius: 3,
+          }}
           height={60}
           alignContent={"center"}
           display={"flex"}
@@ -87,10 +98,16 @@ const AddUserForm = ({ open, handleClose, onAddUser }: AddUserFormProps) => {
           }}
         >
           <FormInputComponent
-            name="name"
+            name="firstName"
             control={control}
             label="Nombre"
-            errorMessage={errors.name?.message}
+            errorMessage={t(errors.firstName?.message || "")}
+          />
+          <FormInputComponent
+            name="lastName"
+            control={control}
+            label="Apellidos"
+            errorMessage={t(errors.lastName?.message || "") }
           />
 
           <FormInputComponent
@@ -98,7 +115,7 @@ const AddUserForm = ({ open, handleClose, onAddUser }: AddUserFormProps) => {
             control={control}
             label="Email"
             type="email"
-            errorMessage={errors.email?.message}
+            errorMessage={t(errors.email?.message || "")}
           />
           <FormSelectComponent
             name="role"
@@ -109,7 +126,7 @@ const AddUserForm = ({ open, handleClose, onAddUser }: AddUserFormProps) => {
               { value: "option2", label: "Opción 2" },
               { value: "option3", label: "Opción 3" },
             ]}
-            errorMessage={errors.role?.message}
+            errorMessage={t(errors.role?.message || "")}
           />
 
           <ButtonGroup fullWidth sx={{ marginTop: 2 }}>
@@ -119,16 +136,17 @@ const AddUserForm = ({ open, handleClose, onAddUser }: AddUserFormProps) => {
               color="primary"
               sx={{ marginRight: 6 }}
             >
-              Enviar
+              {t("buttons.add")}
             </Button>
             <Button
               type="button"
               variant="contained"
+              size="large"
               color="inherit"
               onClick={handleClose}
               sx={{ marginLeft: 6 }}
             >
-              Cancelar
+              {t("buttons.cancel")}
             </Button>
           </ButtonGroup>
         </Box>

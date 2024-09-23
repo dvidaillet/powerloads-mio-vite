@@ -26,5 +26,6 @@
 .custom-columns-header {
   background-color: #c40f40; /* Primary color */
   color: white;
+  font-weight: 600;
   font-size: medium;
 }
