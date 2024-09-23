@@ -31,6 +31,7 @@ const FormInputComponent: React.FC<FormInputProps> = ({
           label={label}
           variant="outlined"
           fullWidth
+          size="small"
           type={type}
           error={!!errorMessage}
           helperText={errorMessage}

@@ -1,9 +1,17 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Box, Button, Modal, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  IconButton,
+  Modal,
+  Typography,
+} from "@mui/material";
 import { userSchema } from "../../constants/userSchema";
 import FormInputComponent from "../../../../components/Form/Input/FormInput";
 import FormSelectComponent from "../../../../components/Form/Select/FormSelect";
+import CloseIcon from "@mui/icons-material/Close";
 
 type AddUserFormProps = {
   open: boolean;
@@ -44,9 +52,13 @@ const AddUserForm = ({ open, handleClose, onAddUser }: AddUserFormProps) => {
         }}
       >
         <Box
-          sx={{ backgroundColor: "#c40f40", paddingLeft: 5, paddingTop: 2 }}
+          sx={{ backgroundColor: "#c40f40", px: 5, paddingTop: 2 }}
           height={60}
           alignContent={"center"}
+          display={"flex"}
+          flexDirection={"row"}
+          justifyContent={"space-between"}
+          alignItems={"center"}
         >
           <Typography
             variant="h6"
@@ -57,6 +69,9 @@ const AddUserForm = ({ open, handleClose, onAddUser }: AddUserFormProps) => {
           >
             Agregar Nuevo Usuario
           </Typography>
+          <IconButton onClick={handleClose}>
+            <CloseIcon sx={{ color: "white", marginTop: -1 }} />
+          </IconButton>
         </Box>
         <Box
           component="form"
@@ -97,9 +112,25 @@ const AddUserForm = ({ open, handleClose, onAddUser }: AddUserFormProps) => {
             errorMessage={errors.role?.message}
           />
 
-          <Button type="submit" variant="contained" color="primary" fullWidth>
-            Enviar
-          </Button>
+          <ButtonGroup fullWidth sx={{ marginTop: 2 }}>
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              sx={{ marginRight: 6 }}
+            >
+              Enviar
+            </Button>
+            <Button
+              type="button"
+              variant="contained"
+              color="inherit"
+              onClick={handleClose}
+              sx={{ marginLeft: 6 }}
+            >
+              Cancelar
+            </Button>
+          </ButtonGroup>
         </Box>
       </Box>
     </Modal>

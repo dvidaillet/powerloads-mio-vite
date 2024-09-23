@@ -35,8 +35,9 @@ const FormSelectComponent: React.FC<FormSelectProps> = ({
           <Select
             {...field}
             label={label}
+            size="small"
             value={field.value || ""} // Asegúrate de que sea un string
-            input={<OutlinedInput label={label} />}
+            input={<OutlinedInput sx={{ marginTop: 1 }} label={label} />}
             MenuProps={{
               PaperProps: {
                 style: {
