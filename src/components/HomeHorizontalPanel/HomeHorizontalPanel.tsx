@@ -6,7 +6,6 @@ import {
   IconButton,
   Typography,
   Box,
-  Badge,
   Menu,
   MenuItem,
   Avatar,
@@ -15,10 +14,10 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ThemeToggleButton from "../buttons/ThemeToggleButton/ThemeToggleButton";
 import LanguageMenu from "../LanguageMenu/LanguageMenu";
-import HomeIcon from "@mui/icons-material/Home";
 import MarkEmailUnreadOutlinedIcon from "@mui/icons-material/MarkEmailUnreadOutlined";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import NavIconButton from "../buttons/NavIconButton/NavIconButton";
 
 // Componente reutilizable para botones de navegación
 const NavButton = ({ to, text }: { to: string; text: string }) => (
@@ -31,55 +30,16 @@ const NavButton = ({ to, text }: { to: string; text: string }) => (
   </Button>
 );
 
-const NavIconButton = ({
-  to,
-  text,
-  notification,
-  IconComponent,
-}: {
-  to: string;
-  text?: string;
-  notification?: number;
-  IconComponent: React.ElementType;
-}) => (
-  <IconButton
-    title={text}
-    sx={{
-      borderRadius: "8px",
-      marginX: "3px",
-      height: "38px",
-      width: "38px",
-      backgroundColor: "#f5e4e4", // Rosado claro
-      boxShadow: "0 2px 4px rgba(224, 75, 100, 0.808)",
-      "&:hover": {
-        backgroundColor: "#F8BBD0", // Un tono más oscuro en hover
-        boxShadow: "0 0px 0px rgba(206, 33, 62, 0.808)",
-      },
-    }}
-  >
-    <Badge badgeContent={notification} color="error">
-      <Link to={to}>
-        <IconComponent
-          color="primary"
-          sx={{ width: "24px", height: "24px", marginTop: "5px" }}
-        />
-      </Link>
-    </Badge>
-  </IconButton>
-);
+const user = {
+  avatar: "https://via.placeholder.com/150",
+  firstName: "Juan",
+  lastName: "Pérez",
+};
 
 const HomeHorizontalPanel = () => {
   const { t } = useTranslation();
 
-  // Estado para controlar la apertura del menú
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-
-  // Datos ficticios del usuario
-  const user = {
-    avatar: "https://via.placeholder.com/150",
-    firstName: "Juan",
-    lastName: "Pérez",
-  };
 
   const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -95,17 +55,26 @@ const HomeHorizontalPanel = () => {
         sx={{ display: "flex", justifyContent: "space-between" }}
         className="home-panel-container"
       >
-        <NavIconButton
-          to="/"
-          IconComponent={HomeIcon}
-          text={t("home.linkText")}
-        />
-
-        <Link to="/about" style={{ margin: "0 10px" }}>
-          <Typography variant="h6" fontSize={14} color="grey">
-            {t("about.linkText")}
-          </Typography>
-        </Link>
+        <Button
+          component={Link}
+          to={"/"}
+          sx={{ display: "flex", alignItems: "center", textTransform: "none" }}
+        >
+          <Box
+            sx={{
+              marginRight: "8px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <img
+              src={"../../../public/images/logo_powerload_black.png"}
+              alt="icon"
+              style={{ width: "200px", height: "30px" }}
+            />
+          </Box>
+        </Button>
 
         <Box
           sx={{
