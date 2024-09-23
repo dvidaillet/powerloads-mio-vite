@@ -3,6 +3,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Box, Button, Modal, Typography } from "@mui/material";
 import { userSchema } from "../../constants/userSchema";
 import FormInputComponent from "../../../../components/Form/Input/FormInput";
+import FormSelectComponent from "../../../../components/Form/Select/FormSelect";
 
 type AddUserFormProps = {
   open: boolean;
@@ -83,6 +84,17 @@ const AddUserForm = ({ open, handleClose, onAddUser }: AddUserFormProps) => {
             label="Email"
             type="email"
             errorMessage={errors.email?.message}
+          />
+          <FormSelectComponent
+            name="role"
+            control={control}
+            label="Selecciona opciones"
+            options={[
+              { value: "option1", label: "Opción 1" },
+              { value: "option2", label: "Opción 2" },
+              { value: "option3", label: "Opción 3" },
+            ]}
+            errorMessage={errors.role?.message}
           />
 
           <Button type="submit" variant="contained" color="primary" fullWidth>

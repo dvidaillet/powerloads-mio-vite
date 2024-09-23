@@ -6,19 +6,16 @@ import {
   FormControl,
   InputLabel,
   FormHelperText,
-  Chip,
-  Box,
 } from "@mui/material";
 import { OutlinedInput } from "@mui/material";
 
 interface FormSelectProps {
   name: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  control: any;
+  control: any; // Usa el tipo correcto en lugar de `any`
   label: string;
   options: { value: string; label: string }[];
   errorMessage?: string;
-  multiple?: boolean; // Para seleccionar múltiples opciones
 }
 
 const FormSelectComponent: React.FC<FormSelectProps> = ({
@@ -27,7 +24,6 @@ const FormSelectComponent: React.FC<FormSelectProps> = ({
   label,
   options,
   errorMessage,
-  multiple = false,
 }) => {
   return (
     <Controller
@@ -39,27 +35,8 @@ const FormSelectComponent: React.FC<FormSelectProps> = ({
           <Select
             {...field}
             label={label}
-            multiple={multiple}
+            value={field.value || ""} // Asegúrate de que sea un string
             input={<OutlinedInput label={label} />}
-            renderValue={(selected) => {
-              if (Array.isArray(selected)) {
-                return (
-                  <Box sx={{ display: "flex", flexWrap: "wrap" }}>
-                    {selected.map((value) => (
-                      <Chip
-                        key={value}
-                        label={
-                          options.find((option) => option.value === value)
-                            ?.label
-                        }
-                        sx={{ m: 0.5 }}
-                      />
-                    ))}
-                  </Box>
-                );
-              }
-              return selected;
-            }}
             MenuProps={{
               PaperProps: {
                 style: {
