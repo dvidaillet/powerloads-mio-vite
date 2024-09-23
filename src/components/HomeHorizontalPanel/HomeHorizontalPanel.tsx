@@ -4,11 +4,7 @@ import {
   Toolbar,
   Button,
   IconButton,
-  Typography,
   Box,
-  Menu,
-  MenuItem,
-  Avatar,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -18,17 +14,8 @@ import MarkEmailUnreadOutlinedIcon from "@mui/icons-material/MarkEmailUnreadOutl
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import NavIconButton from "../buttons/NavIconButton/NavIconButton";
-
-// Componente reutilizable para botones de navegación
-const NavButton = ({ to, text }: { to: string; text: string }) => (
-  <Button sx={{ padding: "15px 35px" }}>
-    <Link to={to} style={{ textDecoration: "none" }}>
-      <Typography variant="h6" fontSize={14} fontWeight={600} color="grey">
-        {text}
-      </Typography>
-    </Link>
-  </Button>
-);
+import UserPanelMenuComponent from "../UserPanelMenu/UserPanelMenu";
+import NavButton from "../buttons/NavButton/NavButton";
 
 const user = {
   avatar: "https://via.placeholder.com/150",
@@ -71,7 +58,7 @@ const HomeHorizontalPanel = () => {
             <img
               src={"../../../public/images/logo_powerload_black.png"}
               alt="icon"
-              style={{ width: "200px", height: "30px" }}
+              style={{ width: "220px", height: "35px" }}
             />
           </Box>
         </Button>
@@ -87,7 +74,6 @@ const HomeHorizontalPanel = () => {
           <NavButton to="/loads" text={t("homePanel.loads")} />
           <NavButton to="/support" text={t("homePanel.support")} />
 
-          {/* Botón de usuario con menú */}
           <IconButton
             onClick={handleMenuOpen}
             sx={{
@@ -107,48 +93,13 @@ const HomeHorizontalPanel = () => {
               sx={{ width: "24px", height: "24px" }}
             />
           </IconButton>
-
-          <Menu
+          <UserPanelMenuComponent
             anchorEl={anchorEl}
             open={Boolean(anchorEl)}
             onClose={handleMenuClose}
-            PaperProps={{
-              sx: {
-                padding: "10px",
-                boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
-              },
-            }}
-          >
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                padding: "10px",
-                flexDirection: "column",
-              }}
-            >
-              <Avatar
-                src={user.avatar}
-                alt={user.firstName}
-                sx={{ width: 70, height: 70 }}
-              />
-              <Typography variant="body1" fontWeight="bold">
-                {user.firstName} {user.lastName}
-              </Typography>
-            </Box>
-            <MenuItem
-              onClick={() => console.log("Perfil")}
-              sx={{ justifyContent: "center" }}
-            >
-              {t("profile")}
-            </MenuItem>
-            <MenuItem
-              onClick={() => console.log("Desconectarse")}
-              sx={{ justifyContent: "center" }}
-            >
-              {t("logout")}
-            </MenuItem>
-          </Menu>
+            user={user}
+            t={t}
+          />
 
           <NavIconButton
             to="/messages"
