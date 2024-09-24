@@ -115,9 +115,9 @@ const UsersTableComponent = () => {
         }}
       >
         <DataGrid
-          rows={data || []}
+          rows={data?.users || []}
           columns={UserColumns}
-          rowCount={data?.total || 0}
+          rowCount={data?.totalUsers || 0}
           pageSizeOptions={[5, 10, 15, 20]}
           paginationMode="server"
           paginationModel={paginationModel}
