@@ -39,11 +39,25 @@ const UsersTableComponent = () => {
 
   return (
     <div>
-      <Button variant="contained" color="primary" size="large" onClick={handleOpen}>
+      <Button
+        variant="contained"
+        color="primary"
+        size="large"
+        onClick={handleOpen}
+      >
         Agregar Usuario
       </Button>
       {userData ? (
-        <div style={{ height: 500, width: "100%", marginTop:20 }}>
+        <div
+          style={{
+            height: 500,
+            width: "100%",
+            marginTop: 20,
+            backgroundColor: "white",
+            boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
+            borderRadius:8,
+          }}
+        >
           <DataGrid
             rows={userData}
             columns={UserColumns}
@@ -54,7 +68,7 @@ const UsersTableComponent = () => {
       ) : (
         <p>Loading...</p>
       )}
-      {/* Aquí se muestra el formulario */}
+      
       <AddUserForm
         open={open}
         handleClose={handleClose}
