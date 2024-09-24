@@ -13,6 +13,7 @@ import { userSchema } from "../../constants/userSchema";
 import FormInputComponent from "../../../../components/Form/Input/FormInput";
 import FormSelectComponent from "../../../../components/Form/Select/FormSelect";
 import CloseIcon from "@mui/icons-material/Close";
+import useFetchRoleUsers from "../../api/useFetchRoleUsers";
 
 type AddUserFormProps = {
   open: boolean;
@@ -20,6 +21,8 @@ type AddUserFormProps = {
 };
 const AddUserForm = ({ open, handleClose }: AddUserFormProps) => {
   const { t } = useTranslation();
+  const { roles } = useFetchRoleUsers();
+  console.log("🚀 - AddUserForm - roles:", roles)
 
   const {
     control,
