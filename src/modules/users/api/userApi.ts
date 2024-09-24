@@ -6,7 +6,7 @@ export const userApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000/powerload' }),
   endpoints: (builder) => ({
     getUsers: builder.query({
-      query: () => '/users', // Petición GET a /users
+        query: ({ page = 1, limit = 10 }) => `/users?page=${page}&limit=${limit}`, // Petición GET a /users
     }),
   }),
 });

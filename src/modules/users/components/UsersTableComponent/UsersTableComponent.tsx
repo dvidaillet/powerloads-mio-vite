@@ -1,7 +1,7 @@
 import { /* useEffect, */ useState } from "react";
 import { useTranslation } from "react-i18next";
 // import axiosInstance from "../../../../api/axiosConfig";
-import { DataGrid } from "@mui/x-data-grid";
+import { DataGrid, GridPaginationModel } from "@mui/x-data-grid";
 import { UserColumns } from "../../constants/UserColuns";
 import { Button, styled, Typography } from "@mui/material";
 import AddUserForm from "../AddUserForm/AddUserForm";
@@ -71,19 +71,30 @@ function CustomNoRowsOverlay() {
 
 const UsersTableComponent = () => {
   const { t } = useTranslation();
-  // const [userData, setUserData] = useState<IUser[] | null>(null);
   const [open, setOpen] = useState(false);
+  // Control de la paginación (página y tamaño de página)
+  const [paginationModel, setPaginationModel] = useState<GridPaginationModel>({
+    page: 0, // MUI es 0-indexed
+    pageSize: 10, // Tamaño inicial de la página
+  });
 
-  const { data, error, isLoading } = useGetUsersQuery();
+  // Pasar el estado de la paginación a la API
+  const { data, error, isLoading } = useGetUsersQuery({
+    page: paginationModel.page + 1, // La API espera 1-indexed
+    limit: paginationModel.pageSize,
+  });
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const handlePaginationChange = (newPaginationModel: GridPaginationModel) => {
+    setPaginationModel(newPaginationModel);
+  };
   if (isLoading) return <div>Cargando...</div>;
   if (error) return <div>Error al cargar los usuarios</div>;
 
   return (
-    <div>
+    <>
       <Button
         variant="contained"
         color="primary"
@@ -95,7 +106,7 @@ const UsersTableComponent = () => {
       </Button>
       <div
         style={{
-          height: 500,
+          height: "auto",
           width: "100%",
           marginTop: 20,
           backgroundColor: "white",
@@ -106,7 +117,11 @@ const UsersTableComponent = () => {
         <DataGrid
           rows={data || []}
           columns={UserColumns}
+          rowCount={data?.total || 0}
           pageSizeOptions={[5, 10, 15, 20]}
+          paginationMode="server"
+          paginationModel={paginationModel}
+          onPaginationModelChange={handlePaginationChange}
           disableRowSelectionOnClick
           slots={{
             noRowsOverlay: CustomNoRowsOverlay,
@@ -114,11 +129,8 @@ const UsersTableComponent = () => {
         />
       </div>
 
-      <AddUserForm
-        open={open}
-        handleClose={handleClose}
-      />
-    </div>
+      <AddUserForm open={open} handleClose={handleClose} />
+    </>
   );
 };
 
