@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Controller } from "react-hook-form";
 import {
   Select,
@@ -25,6 +26,7 @@ const FormSelectComponent: React.FC<FormSelectProps> = ({
   options,
   errorMessage,
 }) => {
+  const { t } = useTranslation();
   return (
     <Controller
       name={name}
@@ -49,7 +51,7 @@ const FormSelectComponent: React.FC<FormSelectProps> = ({
           >
             {options.map((option) => (
               <MenuItem key={option.value} value={option.value}>
-                {option.label}
+                {t(option.label)}
               </MenuItem>
             ))}
           </Select>

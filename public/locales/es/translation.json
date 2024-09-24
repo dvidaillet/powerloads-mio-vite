@@ -65,5 +65,9 @@
   },
   "userView": {
     "noUsers": "No se encontraron usuarios"
-  }
+  },
+  "sales": "Comercial",
+  "admin": "Administrador",
+  "manager_cargo": "Administrador de carga",
+  "manager_transport": "Administrador de transporte"
 }

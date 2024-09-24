@@ -22,7 +22,6 @@ type AddUserFormProps = {
 const AddUserForm = ({ open, handleClose }: AddUserFormProps) => {
   const { t } = useTranslation();
   const { roles } = useFetchRoleUsers();
-  console.log("🚀 - AddUserForm - roles:", roles)
 
   const {
     control,
@@ -122,11 +121,7 @@ const AddUserForm = ({ open, handleClose }: AddUserFormProps) => {
             name="role"
             control={control}
             label="Selecciona opciones"
-            options={[
-              { value: "option1", label: "Opción 1" },
-              { value: "option2", label: "Opción 2" },
-              { value: "option3", label: "Opción 3" },
-            ]}
+            options={roles}
             errorMessage={t(errors.role?.message || "")}
           />
 
