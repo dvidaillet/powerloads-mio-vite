@@ -90,7 +90,7 @@ const UsersTableComponent = () => {
   const handlePaginationChange = (newPaginationModel: GridPaginationModel) => {
     setPaginationModel(newPaginationModel);
   };
-  if (isLoading) return <div>Cargando...</div>;
+  // if (isLoading) return <div>Cargando...</div>;
   if (error) return <div>Error al cargar los usuarios</div>;
 
   return (
@@ -99,6 +99,7 @@ const UsersTableComponent = () => {
         variant="contained"
         color="primary"
         size="large"
+        sx={{ height: 50 }}
         onClick={handleOpen}
       >
         <PersonAddAlt1OutlinedIcon />
@@ -120,6 +121,7 @@ const UsersTableComponent = () => {
           rowCount={data?.totalUsers || 0}
           pageSizeOptions={[5, 10, 15, 20]}
           paginationMode="server"
+          loading={isLoading}
           paginationModel={paginationModel}
           onPaginationModelChange={handlePaginationChange}
           disableRowSelectionOnClick

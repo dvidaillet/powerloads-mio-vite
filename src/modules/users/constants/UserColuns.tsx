@@ -1,7 +1,9 @@
 import { GridColDef } from "@mui/x-data-grid";
-import { Avatar, Button, IconButton } from "@mui/material";
+import { Avatar, IconButton } from "@mui/material";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { IUser } from "../interfaces/user";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import NotInterestedIcon from "@mui/icons-material/NotInterested";
 
 export const UserColumns: GridColDef[] = [
   {
@@ -76,13 +78,13 @@ export const UserColumns: GridColDef[] = [
     headerClassName: "custom-columns-header",
     renderCell: (params) =>
       params.value ? (
-        <Button variant="contained" color="success">
-          Activo
-        </Button>
+        <IconButton color="success">
+          <CheckCircleIcon />
+        </IconButton>
       ) : (
-        <Button variant="contained" color="error">
-          Inactivo
-        </Button>
+        <IconButton color="error">
+          <NotInterestedIcon />
+        </IconButton>
       ),
   },
   {
