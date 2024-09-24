@@ -14,14 +14,11 @@ import FormInputComponent from "../../../../components/Form/Input/FormInput";
 import FormSelectComponent from "../../../../components/Form/Select/FormSelect";
 import CloseIcon from "@mui/icons-material/Close";
 
-
 type AddUserFormProps = {
   open: boolean;
   handleClose: () => void;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  onAddUser: (data: any) => void;
 };
-const AddUserForm = ({ open, handleClose, onAddUser }: AddUserFormProps) => {
+const AddUserForm = ({ open, handleClose }: AddUserFormProps) => {
   const { t } = useTranslation();
 
   const {
@@ -39,7 +36,7 @@ const AddUserForm = ({ open, handleClose, onAddUser }: AddUserFormProps) => {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onSubmit = (data: any) => {
-    onAddUser(data); // Llama a la función para agregar el usuario
+    console.log("🚀 - onSubmit - data:", data);
   };
 
   return (

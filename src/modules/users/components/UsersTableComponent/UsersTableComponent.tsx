@@ -1,13 +1,12 @@
-import { useEffect, useState } from "react";
+import { /* useEffect, */ useState } from "react";
 import { useTranslation } from "react-i18next";
-import axiosInstance from "../../../../api/axiosConfig";
-import { IUser } from "../../interfaces/user";
+// import axiosInstance from "../../../../api/axiosConfig";
 import { DataGrid } from "@mui/x-data-grid";
 import { UserColumns } from "../../constants/UserColuns";
 import { Button, styled, Typography } from "@mui/material";
 import AddUserForm from "../AddUserForm/AddUserForm";
-import { initialUserValues } from "../../constants/InitialUerValue";
 import PersonAddAlt1OutlinedIcon from "@mui/icons-material/PersonAddAlt1Outlined";
+import { useGetUsersQuery } from "../../api/userApi";
 
 const StyledGridOverlay = styled("div")(({ theme }) => ({
   display: "flex",
@@ -72,34 +71,16 @@ function CustomNoRowsOverlay() {
 
 const UsersTableComponent = () => {
   const { t } = useTranslation();
-  const [userData, setUserData] = useState<IUser[] | null>(null);
+  // const [userData, setUserData] = useState<IUser[] | null>(null);
   const [open, setOpen] = useState(false);
-  const [newUser, setNewUser] = useState<IUser>(initialUserValues); // Estado del nuevo usuario
 
-  const handleAddUser = () => {
-    // Aquí puedes hacer la lógica para enviar el nuevo usuario a la API
-    console.log("New user:", newUser);
-    // Puedes hacer una petición POST con axiosInstance.post() aquí
-    setOpen(false); // Cierra el modal
-  };
+  const { data, error, isLoading } = useGetUsersQuery();
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const getUsers = () => {
-    axiosInstance
-      .get("/users")
-      .then((response) => {
-        setUserData(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching user profile:", error);
-      });
-  };
-
-  useEffect(() => {
-    getUsers();
-  }, []);
+  if (isLoading) return <div>Cargando...</div>;
+  if (error) return <div>Error al cargar los usuarios</div>;
 
   return (
     <div>
@@ -123,7 +104,7 @@ const UsersTableComponent = () => {
         }}
       >
         <DataGrid
-          rows={userData || []}
+          rows={data || []}
           columns={UserColumns}
           pageSizeOptions={[5, 10, 15, 20]}
           disableRowSelectionOnClick
@@ -136,7 +117,6 @@ const UsersTableComponent = () => {
       <AddUserForm
         open={open}
         handleClose={handleClose}
-        onAddUser={handleAddUser}
       />
     </div>
   );
