@@ -6,7 +6,8 @@
     "support": "Soporte"
   },
   "buttons": {
-    "add": "Agregar",
+    "addUser": "Agregar Usuario",
+    "save": "Guardar",
     "cancel": "Cancelar",
     "loads": "Loads",
     "support": "Support"

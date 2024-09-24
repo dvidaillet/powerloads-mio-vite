@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import axiosInstance from "../../../../api/axiosConfig";
 import { IUser } from "../../interfaces/user";
 import { DataGrid } from "@mui/x-data-grid";
 import { UserColumns } from "../../constants/UserColuns";
-import { Button } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import AddUserForm from "../AddUserForm/AddUserForm";
 import { initialUserValues } from "../../constants/InitialUerValue";
+import PersonAddAlt1OutlinedIcon from "@mui/icons-material/PersonAddAlt1Outlined";
 
 const UsersTableComponent = () => {
+  const { t } = useTranslation();
   const [userData, setUserData] = useState<IUser[] | null>(null);
   const [open, setOpen] = useState(false);
   const [newUser, setNewUser] = useState<IUser>(initialUserValues); // Estado del nuevo usuario
@@ -45,7 +48,8 @@ const UsersTableComponent = () => {
         size="large"
         onClick={handleOpen}
       >
-        Agregar Usuario
+        <PersonAddAlt1OutlinedIcon />
+        <Typography marginLeft={1}>{t("buttons.addUser")}</Typography>
       </Button>
       {userData ? (
         <div
@@ -55,7 +59,7 @@ const UsersTableComponent = () => {
             marginTop: 20,
             backgroundColor: "white",
             boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
-            borderRadius:8,
+            borderRadius: 8,
           }}
         >
           <DataGrid
@@ -68,7 +72,7 @@ const UsersTableComponent = () => {
       ) : (
         <p>Loading...</p>
       )}
-      
+
       <AddUserForm
         open={open}
         handleClose={handleClose}

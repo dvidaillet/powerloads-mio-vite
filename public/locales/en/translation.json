@@ -6,7 +6,8 @@
     "support": "Support"
   },
   "buttons": {
-    "add": "Add",
+    "addUser": "Add user",
+    "save": "Save",
     "cancel": "Cancel",
     "loads": "Loads",
     "support": "Support"

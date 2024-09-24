@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import { yupResolver } from "@hookform/resolvers/yup";
 import {
   Box,
@@ -12,7 +13,7 @@ import { userSchema } from "../../constants/userSchema";
 import FormInputComponent from "../../../../components/Form/Input/FormInput";
 import FormSelectComponent from "../../../../components/Form/Select/FormSelect";
 import CloseIcon from "@mui/icons-material/Close";
-import { useTranslation } from "react-i18next";
+
 
 type AddUserFormProps = {
   open: boolean;
@@ -107,7 +108,7 @@ const AddUserForm = ({ open, handleClose, onAddUser }: AddUserFormProps) => {
             name="lastName"
             control={control}
             label="Apellidos"
-            errorMessage={t(errors.lastName?.message || "") }
+            errorMessage={t(errors.lastName?.message || "")}
           />
 
           <FormInputComponent
@@ -136,7 +137,7 @@ const AddUserForm = ({ open, handleClose, onAddUser }: AddUserFormProps) => {
               color="primary"
               sx={{ marginRight: 6 }}
             >
-              {t("buttons.add")}
+              <Typography>{t("buttons.save")}</Typography>
             </Button>
             <Button
               type="button"
@@ -146,7 +147,7 @@ const AddUserForm = ({ open, handleClose, onAddUser }: AddUserFormProps) => {
               onClick={handleClose}
               sx={{ marginLeft: 6 }}
             >
-              {t("buttons.cancel")}
+              <Typography>{t("buttons.cancel")}</Typography>
             </Button>
           </ButtonGroup>
         </Box>
