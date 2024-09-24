@@ -59,5 +59,11 @@
     "emailRequired": "The email field is required",
     "emailIncorrectFormat": "The email format is invalid",
     "roleRequired": "You must select a role"
+  },
+  "addUserModal": {
+    "title": "Add new user"
+  },
+  "userView": {
+    "noUsers": "No users to show"
   }
 }

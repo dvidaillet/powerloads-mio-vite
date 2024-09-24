@@ -79,7 +79,7 @@ const AddUserForm = ({ open, handleClose, onAddUser }: AddUserFormProps) => {
             component="h2"
             sx={{ mb: 2 }}
           >
-            Agregar Nuevo Usuario
+            {t("addUserModal.title")}
           </Typography>
           <IconButton onClick={handleClose}>
             <CloseIcon sx={{ color: "white", marginTop: -1 }} />

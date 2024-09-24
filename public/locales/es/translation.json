@@ -59,5 +59,11 @@
     "emailRequired": "El campo email es obligatorio",
     "emailIncorrectFormat": "El formato del email es inválido",
     "roleRequired": "Debe seleccionar un rol"
+  },
+  "addUserModal": {
+    "title": "Agregar Nuevo Usuario"
+  },
+  "userView": {
+    "noUsers": "No se encontraron usuarios"
   }
 }
