@@ -2,7 +2,7 @@ import { /* useEffect, */ useState } from "react";
 import { useTranslation } from "react-i18next";
 // import axiosInstance from "../../../../api/axiosConfig";
 import { DataGrid, GridPaginationModel } from "@mui/x-data-grid";
-import { UserColumns } from "../../constants/UserColumns";
+import { UserColumns } from "../../constants/LoadsColumns";
 import { Button, styled, Typography } from "@mui/material";
 import AddUserForm from "../AddUserForm/AddUserForm";
 import PersonAddAlt1OutlinedIcon from "@mui/icons-material/PersonAddAlt1Outlined";

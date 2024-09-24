@@ -1,12 +1,9 @@
-import { /* useEffect, */ useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
-// import axiosInstance from "../../../../api/axiosConfig";
 import { DataGrid, GridPaginationModel } from "@mui/x-data-grid";
-import { UserColumns } from "../../constants/UserColumns";
-import { Button, styled, Typography } from "@mui/material";
-import AddUserForm from "../AddUserForm/AddUserForm";
-import PersonAddAlt1OutlinedIcon from "@mui/icons-material/PersonAddAlt1Outlined";
-import { useGetUsersQuery } from "../../api/userApi";
+import { LoadsColuns } from "../../constants/LoadsColumns";
+import { styled, Typography } from "@mui/material";
+import { useGetLoadsQuery } from "../../api/loadsApi";
 
 const StyledGridOverlay = styled("div")(({ theme }) => ({
   display: "flex",
@@ -69,42 +66,27 @@ function CustomNoRowsOverlay() {
   );
 }
 
-const UsersTableComponent = () => {
-  const { t } = useTranslation();
-  const [open, setOpen] = useState(false);
-  // Control de la paginación (página y tamaño de página)
+const LoadsTableComponent = () => {
   const [paginationModel, setPaginationModel] = useState<GridPaginationModel>({
     page: 0, // MUI es 0-indexed
     pageSize: 10, // Tamaño inicial de la página
   });
 
   // Pasar el estado de la paginación a la API
-  const { data, error, isLoading } = useGetUsersQuery({
+  const { data, error, isLoading } = useGetLoadsQuery({
     page: paginationModel.page + 1, // La API espera 1-indexed
     limit: paginationModel.pageSize,
   });
 
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
+  console.log("🚀 - LoadsTableComponent - data:", data);
   const handlePaginationChange = (newPaginationModel: GridPaginationModel) => {
     setPaginationModel(newPaginationModel);
   };
   // if (isLoading) return <div>Cargando...</div>;
-  if (error) return <div>Error al cargar los usuarios</div>;
+  if (error) return <div>Error al obtener las cargas</div>;
 
   return (
     <>
-      <Button
-        variant="contained"
-        color="primary"
-        size="large"
-        sx={{ height: 50 }}
-        onClick={handleOpen}
-      >
-        <PersonAddAlt1OutlinedIcon />
-        <Typography marginLeft={1}>{t("buttons.addUser")}</Typography>
-      </Button>
       <div
         style={{
           height: "auto",
@@ -116,9 +98,9 @@ const UsersTableComponent = () => {
         }}
       >
         <DataGrid
-          rows={data?.users || []}
-          columns={UserColumns}
-          rowCount={data?.totalUsers || 0}
+          rows={data?.loads || []}
+          columns={LoadsColuns}
+          rowCount={data?.totalLoads || 0}
           pageSizeOptions={[5, 10, 15, 20]}
           paginationMode="server"
           loading={isLoading}
@@ -130,10 +112,8 @@ const UsersTableComponent = () => {
           }}
         />
       </div>
-
-      <AddUserForm open={open} handleClose={handleClose} />
     </>
   );
 };
 
-export default UsersTableComponent;
+export default LoadsTableComponent;
