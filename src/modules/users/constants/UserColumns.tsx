@@ -24,7 +24,6 @@ export const UserColumns: GridColDef[] = [
   {
     field: "firstName",
     renderHeader: () => <HeaderNameCell title="headerColumns.firstName" />,
-    // headerName: "headerColumns.firstName",
     width: 150,
     headerAlign: "center",
     align: "center",
@@ -32,7 +31,7 @@ export const UserColumns: GridColDef[] = [
   },
   {
     field: "lastName",
-    headerName: "headerColumns.lastName",
+    renderHeader: () => <HeaderNameCell title="headerColumns.lastName" />,
     width: 250,
     headerAlign: "center",
     align: "center",
@@ -40,7 +39,7 @@ export const UserColumns: GridColDef[] = [
   },
   {
     field: "email",
-    headerName: "headerColumns.email",
+    renderHeader: () => <HeaderNameCell title="headerColumns.email" />,
     width: 200,
     headerAlign: "center",
     align: "center",
@@ -48,7 +47,7 @@ export const UserColumns: GridColDef[] = [
   },
   {
     field: "company",
-    headerName: "headerColumns.company",
+    renderHeader: () => <HeaderNameCell title="headerColumns.company" />,
     width: 200,
     headerAlign: "center",
     align: "center",
@@ -56,7 +55,7 @@ export const UserColumns: GridColDef[] = [
   },
   {
     field: "phone",
-    headerName: "headerColumns.phone",
+    renderHeader: () => <HeaderNameCell title="headerColumns.phone" />,
     width: 150,
     headerAlign: "center",
     align: "center",
@@ -64,7 +63,7 @@ export const UserColumns: GridColDef[] = [
   },
   {
     field: "role",
-    headerName: "headerColumns.role",
+    renderHeader: () => <HeaderNameCell title="headerColumns.role" />,
     width: 150,
     headerAlign: "center",
     align: "center",
@@ -73,7 +72,7 @@ export const UserColumns: GridColDef[] = [
 
   {
     field: "isActive",
-    headerName: "headerColumns.Activo",
+    renderHeader: () => <HeaderNameCell title="headerColumns.active" />,
     width: 100,
     align: "center",
     headerAlign: "center",
@@ -91,7 +90,7 @@ export const UserColumns: GridColDef[] = [
   },
   {
     field: "acciones",
-    headerName: "headerColumns.actions",
+    renderHeader: () => <HeaderNameCell title="headerColumns.actions" />,
     width: 113,
     headerAlign: "center",
     align: "center",

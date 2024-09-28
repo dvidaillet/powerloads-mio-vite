@@ -19,7 +19,8 @@
     "phone": "Teléfono",
     "company": "Compañía",
     "active": "Activo",
-    "actions": "Acciones"
+    "actions": "Acciones",
+    "role": "Rol"
   },
   "home": {
     "linkText": "Inicio",
