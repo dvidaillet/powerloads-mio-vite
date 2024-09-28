@@ -4,6 +4,7 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { IUser } from "../interfaces/user";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import NotInterestedIcon from "@mui/icons-material/NotInterested";
+import HeaderNameCell from "../../../components/HeaderNameCell/HeaderNameCell";
 
 export const UserColumns: GridColDef[] = [
   {
@@ -22,7 +23,8 @@ export const UserColumns: GridColDef[] = [
   },
   {
     field: "firstName",
-    headerName: "headerColumns.firstName",
+    renderHeader: () => <HeaderNameCell title="headerColumns.firstName" />,
+    // headerName: "headerColumns.firstName",
     width: 150,
     headerAlign: "center",
     align: "center",

@@ -116,6 +116,7 @@ const UsersTableComponent = () => {
         }}
       >
         <DataGrid
+          getRowId={(row) => row._id}
           rows={data?.users || []}
           columns={UserColumns}
           rowCount={data?.totalUsers || 0}
