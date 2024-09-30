@@ -1,12 +1,10 @@
-// import { useTranslation } from "react-i18next";
-
 import PagesHeader from "../components/PagesHeader/PagesHeader";
+import HomeHorizontalPanel from "../components/HomeHorizontalPanel/HomeHorizontalPanel";
 
 const HomePage = () => {
-  // const { t } = useTranslation();
-
   return (
     <>
+      <HomeHorizontalPanel />
       <PagesHeader title="home.title" subtitle="home.description" />
     </>
   );

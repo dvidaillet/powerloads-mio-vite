@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Avatar, Typography, MenuItem, Menu } from "@mui/material";
-
+import UserMenuButton from "../buttons/UserMenuButton/UserMenuButton";
 interface UserMenuComponentProps {
   anchorEl: HTMLElement | null;
   open: boolean;
@@ -18,7 +18,6 @@ const UserPanelMenuComponent: React.FC<UserMenuComponentProps> = ({
   open,
   onClose,
   user,
-  t,
 }) => {
   return (
     <Menu
@@ -53,13 +52,13 @@ const UserPanelMenuComponent: React.FC<UserMenuComponentProps> = ({
         onClick={() => console.log("Perfil")}
         sx={{ justifyContent: "center" }}
       >
-        {t("profile")}
+        <UserMenuButton to="/register" text="profile" />
       </MenuItem>
       <MenuItem
         onClick={() => console.log("Desconectarse")}
-        sx={{ justifyContent: "center"}}
+        sx={{ justifyContent: "center" }}
       >
-        {t("logout")}
+        <UserMenuButton to="/" text="logout" />
       </MenuItem>
     </Menu>
   );

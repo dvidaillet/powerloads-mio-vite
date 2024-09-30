@@ -1,12 +1,16 @@
-// import { useTranslation } from "react-i18next";
 import PagesHeader from "../components/PagesHeader/PagesHeader";
+import HomeHorizontalPanel from "../components/HomeHorizontalPanel/HomeHorizontalPanel";
 
 const NotificationPage = () => {
-  // const { t } = useTranslation();
-
   return (
     <>
-      <PagesHeader title="NotificationPage" subtitle="NotificationPage info" />
+      <HomeHorizontalPanel />
+      <div className="app-container">
+        <PagesHeader
+          title="NotificationPage"
+          subtitle="NotificationPage info"
+        />
+      </div>
     </>
   );
 };

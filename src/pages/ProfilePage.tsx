@@ -1,12 +1,13 @@
-// import { useTranslation } from "react-i18next";
+import HomeHorizontalPanel from "../components/HomeHorizontalPanel/HomeHorizontalPanel";
 import PagesHeader from "../components/PagesHeader/PagesHeader";
 
 const ProfilePage = () => {
-  // const { t } = useTranslation();
-
   return (
     <>
-      <PagesHeader title="ProfilePage" subtitle="Profile info" />
+      <HomeHorizontalPanel />
+      <div className="app-container">
+        <PagesHeader title="ProfilePage" subtitle="Profile info" />
+      </div>
     </>
   );
 };

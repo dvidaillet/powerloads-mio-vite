@@ -1,9 +1,13 @@
 import PagesHeader from "../components/PagesHeader/PagesHeader";
+import HomeHorizontalPanel from "../components/HomeHorizontalPanel/HomeHorizontalPanel";
 
 const MessagesPage = () => {
   return (
     <>
-      <PagesHeader title="MessagesPage" subtitle="MessagesPage info" />
+      <HomeHorizontalPanel />
+      <div className="app-container">
+        <PagesHeader title="MessagesPage" subtitle="MessagesPage info" />
+      </div>
     </>
   );
 };

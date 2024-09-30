@@ -1,15 +1,7 @@
-// import { useTranslation } from "react-i18next";
-import PagesHeader from "../components/PagesHeader/PagesHeader";
-import LoadsTableComponent from "../modules/loads/components/LoadsTableComponent/LoadsTableComponent";
+import LoguinView from "../modules/loguin/LoguinView";
 
 const LoginPage = () => {
-
-  return (
-    <>
-      <PagesHeader title="loads.title" subtitle="loads.description" />
-      <LoadsTableComponent />
-    </>
-  );
+  return <LoguinView />;
 };
 
 export default LoginPage;

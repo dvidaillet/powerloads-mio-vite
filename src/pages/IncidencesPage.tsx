@@ -1,9 +1,13 @@
 import PagesHeader from "../components/PagesHeader/PagesHeader";
+import HomeHorizontalPanel from "../components/HomeHorizontalPanel/HomeHorizontalPanel";
 
 const IncidencesPage = () => {
   return (
     <>
-      <PagesHeader title="incidence.title" subtitle="incidence.description" />
+      <HomeHorizontalPanel />
+      <div className="app-container">
+        <PagesHeader title="incidence.title" subtitle="incidence.description" />
+      </div>
     </>
   );
 };

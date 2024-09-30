@@ -1,15 +1,7 @@
-// import { useTranslation } from "react-i18next";
-import PagesHeader from "../components/PagesHeader/PagesHeader";
-import LoadsTableComponent from "../modules/loads/components/LoadsTableComponent/LoadsTableComponent";
+import RegisterUser from "../modules/registerUser/RegisterUser";
 
 const RegisterUserPage = () => {
-
-  return (
-    <>
-      <PagesHeader title="loads.title" subtitle="loads.description" />
-      <LoadsTableComponent />
-    </>
-  );
+  return <RegisterUser />;
 };
 
 export default RegisterUserPage;
