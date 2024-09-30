@@ -1,15 +1,30 @@
-import { useState } from "react";
-import { TextField, Button, Typography, Box } from "@mui/material";
+import { useTranslation } from "react-i18next";
+import { Button, Typography, Box } from "@mui/material";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import FormInputComponent from "../../components/Form/Input/FormInput";
+import { loguinSchema } from "./constants/loguinSchema";
+import FormCheckboxComponent from "../../components/Form/Checkbox/FormCheckbox";
 
 const LoguinView = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const { t } = useTranslation();
 
-  const handleLogin = (event: { preventDefault: () => void; }) => {
-    event.preventDefault();
-    // Aquí puedes agregar la lógica para enviar los datos al backend.
-    console.log("Email:", email);
-    console.log("Password:", password);
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(loguinSchema), // Resolver de Yup para las validaciones
+    defaultValues: {
+      email: "juan@example.com",
+      password: "1224456",
+      activeSection:false,
+    },
+  });
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const onSubmit = (data: any) => {
+    console.log("🚀 - onSubmit - data:", data);
   };
 
   return (
@@ -22,41 +37,37 @@ const LoguinView = () => {
         boxShadow: 3,
         borderRadius: 2,
       }}
+      component="form"
+      onSubmit={handleSubmit(onSubmit)}
     >
       <Typography variant="h4" gutterBottom>
         Iniciar sesión
       </Typography>
-      <form onSubmit={handleLogin}>
-        <TextField
-          fullWidth
-          label="Correo electrónico"
-          variant="outlined"
-          margin="normal"
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <TextField
-          fullWidth
-          label="Contraseña"
-          variant="outlined"
-          margin="normal"
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <Button
-          fullWidth
-          variant="contained"
-          color="primary"
-          type="submit"
-          sx={{ mt: 2 }}
-        >
-          Iniciar sesión
-        </Button>
-      </form>
+      <FormInputComponent
+        name="email"
+        control={control}
+        label="Email"
+        type="email"
+        errorMessage={t(errors.email?.message || "")}
+      />
+      <FormInputComponent
+        name="password"
+        control={control}
+        label="password"
+        type="password"
+        errorMessage={t(errors.email?.message || "")}
+      />
+      <FormCheckboxComponent control={control} label="Mantener sesion activa" name="activeSection" />
+
+      <Button
+        fullWidth
+        variant="contained"
+        color="primary"
+        type="submit"
+        sx={{ mt: 2 }}
+      >
+        Iniciar sesión
+      </Button>
     </Box>
   );
 };

@@ -1,4 +1,3 @@
-import { string } from "yup";
 import { IUser } from "../interfaces/user";
 
 export const initialUserValues: IUser = {
