@@ -18,7 +18,7 @@ const LoguinView = () => {
     defaultValues: {
       email: "juan@example.com",
       password: "1224456",
-      activeSection:false,
+      activeSection: false,
     },
   });
 
@@ -30,12 +30,15 @@ const LoguinView = () => {
   return (
     <Box
       sx={{
-        width: 300,
+        width: 450,
         margin: "auto",
         mt: 10,
         p: 3,
         boxShadow: 3,
         borderRadius: 2,
+        display: "flex",
+        flexDirection: "column",
+        gap: 2,
       }}
       component="form"
       onSubmit={handleSubmit(onSubmit)}
@@ -46,18 +49,22 @@ const LoguinView = () => {
       <FormInputComponent
         name="email"
         control={control}
-        label="Email"
+        label="headerColumns.email"
         type="email"
         errorMessage={t(errors.email?.message || "")}
       />
       <FormInputComponent
         name="password"
         control={control}
-        label="password"
+        label="formFields.password"
         type="password"
         errorMessage={t(errors.email?.message || "")}
       />
-      <FormCheckboxComponent control={control} label="Mantener sesion activa" name="activeSection" />
+      <FormCheckboxComponent
+        control={control}
+        label="Mantener sesion activa"
+        name="activeSection"
+      />
 
       <Button
         fullWidth

@@ -1,5 +1,6 @@
 import React from "react";
 import { Controller } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import { TextField } from "@mui/material";
 
 interface FormInputProps {
@@ -20,6 +21,7 @@ const FormInputComponent: React.FC<FormInputProps> = ({
   errorMessage,
   defaultValue = "",
 }) => {
+  const { t } = useTranslation();
   return (
     <Controller
       name={name}
@@ -28,7 +30,7 @@ const FormInputComponent: React.FC<FormInputProps> = ({
       render={({ field }) => (
         <TextField
           {...field}
-          label={label}
+          label={t(label)}
           variant="outlined"
           fullWidth
           size="small"

@@ -59,7 +59,16 @@
     "lastNameRequired": "El campo apellido es obligatorio",
     "emailRequired": "El campo email es obligatorio",
     "emailIncorrectFormat": "El formato del email es inválido",
-    "roleRequired": "Debe seleccionar un rol"
+    "roleRequired": "Debe seleccionar un rol",
+    "passwordRequired": "El campo contraseña es obligatorio"
+  },
+  "formFields": {
+    "password": "Contraseña",
+    "lastNameRequired": "The last name field is required",
+    "emailRequired": "The email field is required",
+    "emailIncorrectFormat": "The email format is invalid",
+    "roleRequired": "You must select a role",
+    "passwordRequired": "The password field is required"
   },
   "addUserModal": {
     "title": "Agregar Nuevo Usuario"

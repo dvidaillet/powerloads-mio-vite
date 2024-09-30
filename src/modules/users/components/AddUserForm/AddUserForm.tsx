@@ -100,20 +100,20 @@ const AddUserForm = ({ open, handleClose }: AddUserFormProps) => {
           <FormInputComponent
             name="firstName"
             control={control}
-            label="Nombre"
+            label="headerColumns.firstName"
             errorMessage={t(errors.firstName?.message || "")}
           />
           <FormInputComponent
             name="lastName"
             control={control}
-            label="Apellidos"
+            label="headerColumns.lastName"
             errorMessage={t(errors.lastName?.message || "")}
           />
 
           <FormInputComponent
             name="email"
             control={control}
-            label="Email"
+            label="headerColumns.email"
             type="email"
             errorMessage={t(errors.email?.message || "")}
           />

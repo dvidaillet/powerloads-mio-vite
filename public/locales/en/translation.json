@@ -59,7 +59,16 @@
     "lastNameRequired": "The last name field is required",
     "emailRequired": "The email field is required",
     "emailIncorrectFormat": "The email format is invalid",
-    "roleRequired": "You must select a role"
+    "roleRequired": "You must select a role",
+    "passwordRequired": "The password field is required"
+  },
+  "formFields": {
+    "password": "Password",
+    "lastNameRequired": "The last name field is required",
+    "emailRequired": "The email field is required",
+    "emailIncorrectFormat": "The email format is invalid",
+    "roleRequired": "You must select a role",
+    "passwordRequired": "The password field is required"
   },
   "addUserModal": {
     "title": "Add new user"

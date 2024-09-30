@@ -33,10 +33,10 @@ const FormSelectComponent: React.FC<FormSelectProps> = ({
       control={control}
       render={({ field }) => (
         <FormControl fullWidth error={!!errorMessage}>
-          <InputLabel>{label}</InputLabel>
+          <InputLabel>{t(label)}</InputLabel>
           <Select
             {...field}
-            label={label}
+            label={t(label)}
             size="small"
             value={field.value || ""} // Asegúrate de que sea un string
             input={<OutlinedInput sx={{ marginTop: 1 }} label={label} />}
