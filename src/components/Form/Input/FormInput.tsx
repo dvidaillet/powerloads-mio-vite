@@ -11,6 +11,7 @@ interface FormInputProps {
   type?: string;
   errorMessage?: string;
   defaultValue?: string;
+  required?: boolean;
 }
 
 const FormInputComponent: React.FC<FormInputProps> = ({
@@ -20,6 +21,7 @@ const FormInputComponent: React.FC<FormInputProps> = ({
   type = "text",
   errorMessage,
   defaultValue = "",
+  required = false,
 }) => {
   const { t } = useTranslation();
   return (
@@ -31,6 +33,7 @@ const FormInputComponent: React.FC<FormInputProps> = ({
         <TextField
           {...field}
           label={t(label)}
+          required={required}
           variant="outlined"
           fullWidth
           size="small"

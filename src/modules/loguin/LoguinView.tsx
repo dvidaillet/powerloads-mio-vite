@@ -39,15 +39,24 @@ const LoguinView = () => {
         display: "flex",
         flexDirection: "column",
         gap: 2,
+        backgroundColor: "white",
       }}
       component="form"
       onSubmit={handleSubmit(onSubmit)}
     >
-      <Typography variant="h4" gutterBottom>
+      <Typography
+        variant="h4"
+        gutterBottom
+        textAlign="center"
+        color="primary"
+        fontSize={28}
+        fontWeight={600}
+      >
         Iniciar sesión
       </Typography>
       <FormInputComponent
         name="email"
+        required={true}
         control={control}
         label="headerColumns.email"
         type="email"
@@ -56,25 +65,62 @@ const LoguinView = () => {
       <FormInputComponent
         name="password"
         control={control}
+        required={true}
         label="formFields.password"
         type="password"
         errorMessage={t(errors.email?.message || "")}
       />
-      <FormCheckboxComponent
-        control={control}
-        label="Mantener sesion activa"
-        name="activeSection"
-      />
+      <Box
+        display="flex"
+        flexDirection="row"
+        justifyContent="space-between"
+        alignItems="center"
+      >
+        <FormCheckboxComponent
+          control={control}
+          label="Mantener sesion activa"
+          name="activeSection"
+        />
+        <Button color="inherit">
+          <Typography fontWeight={600} fontSize={14}>
+            Olvido su contraseña ?
+          </Typography>
+        </Button>
+      </Box>
 
       <Button
         fullWidth
         variant="contained"
         color="primary"
         type="submit"
+        size="large"
         sx={{ mt: 2 }}
       >
-        Iniciar sesión
+        <Typography fontWeight={600}>Iniciar sesión</Typography>
       </Button>
+      <Typography textAlign="center">
+        Tambien puede iniciar sesion con
+      </Typography>
+      <Button
+        color="inherit"
+        // variant="outlined"
+        sx={{
+          backgroundColor: "grey",
+          border: "black 1px solid ",
+        }}
+      >
+        <Typography fontWeight={600} fontSize={14}>
+          Google
+        </Typography>
+      </Button>
+      <Typography textAlign="center">
+        No te has regiistrado?
+        <Button color="inherit">
+          <Typography fontWeight={600} fontSize={14}>
+            Registrarse
+          </Typography>
+        </Button>
+      </Typography>
     </Box>
   );
 };
