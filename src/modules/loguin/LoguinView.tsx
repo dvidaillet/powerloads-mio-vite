@@ -5,6 +5,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import FormInputComponent from "../../components/Form/Input/FormInput";
 import { loguinSchema } from "./constants/loguinSchema";
 import FormCheckboxComponent from "../../components/Form/Checkbox/FormCheckbox";
+import FormsLinksButtons from "./components/FormsLinksButtons/FormsLinksButtons";
+import GoogleIcon from "@mui/icons-material/Google";
 
 const LoguinView = () => {
   const { t } = useTranslation();
@@ -44,12 +46,26 @@ const LoguinView = () => {
       component="form"
       onSubmit={handleSubmit(onSubmit)}
     >
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          marginBottom: 1,
+        }}
+      >
+        <img
+          src={"../../../public/images/logo_powerload_black.png"}
+          alt="icon"
+          style={{ width: "270px", height: "35px" }}
+        />
+      </Box>
       <Typography
         variant="h4"
         gutterBottom
         textAlign="center"
         color="primary"
-        fontSize={28}
+        fontSize={22}
         fontWeight={600}
       >
         Iniciar sesión
@@ -81,11 +97,7 @@ const LoguinView = () => {
           label="Mantener sesion activa"
           name="activeSection"
         />
-        <Button color="inherit">
-          <Typography fontWeight={600} fontSize={14}>
-            Olvido su contraseña ?
-          </Typography>
-        </Button>
+        <FormsLinksButtons text="Olvido su contraseña ?" to="/register" />
       </Box>
 
       <Button
@@ -103,23 +115,24 @@ const LoguinView = () => {
       </Typography>
       <Button
         color="inherit"
-        // variant="outlined"
         sx={{
-          backgroundColor: "grey",
-          border: "black 1px solid ",
+          backgroundColor: "#eeeeee",
+          border: "#ccc 1px solid ",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          gap: 1,
+          // boxShadow: "#ccc 100px"
         }}
       >
-        <Typography fontWeight={600} fontSize={14}>
+        <GoogleIcon color="primary" sx={{ width: "18px", height: "18px" }} />
+        <Typography fontWeight={600} fontSize={16} mt="3px">
           Google
         </Typography>
       </Button>
       <Typography textAlign="center">
         No te has regiistrado?
-        <Button color="inherit">
-          <Typography fontWeight={600} fontSize={14}>
-            Registrarse
-          </Typography>
-        </Button>
+        <FormsLinksButtons text="Registrarse" to="/register" />
       </Typography>
     </Box>
   );

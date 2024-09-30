@@ -7,14 +7,14 @@ interface NavButtonProps {
   text: string;
 }
 
-const UserMenuButton: React.FC<NavButtonProps> = ({ to, text }) => (
-  <Button sx={{ padding: "5px 15px" }} color="inherit">
+const FormsLinksButtons: React.FC<NavButtonProps> = ({ to, text }) => (
+  <Button color="inherit">
     <Link to={to} style={{ textDecoration: "none" }}>
-      <Typography variant="h6" fontSize={14} fontWeight={600} color="grey">
+      <Typography fontWeight={600} fontSize={14} color="black">
         {text}
       </Typography>
     </Link>
   </Button>
 );
 
-export default UserMenuButton;
+export default FormsLinksButtons;
