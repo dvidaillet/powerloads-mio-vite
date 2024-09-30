@@ -52,7 +52,7 @@ const UserPanelMenuComponent: React.FC<UserMenuComponentProps> = ({
         onClick={() => console.log("Perfil")}
         sx={{ justifyContent: "center" }}
       >
-        <UserMenuButton to="/register" text="profile" />
+        <UserMenuButton to="/profile" text="profile" />
       </MenuItem>
       <MenuItem
         onClick={() => console.log("Desconectarse")}
