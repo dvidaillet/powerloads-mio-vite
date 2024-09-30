@@ -8,6 +8,8 @@ import DashboardPage from "../pages/DashboardPage";
 import ProfilePage from "../pages/ProfilePage";
 import MessagesPage from "../pages/MessagesPage";
 import NotificationPage from "../pages/NotificationPage";
+import LoginPage from "../pages/LoginPage";
+import RegisterUserPage from "../pages/RegisterUserPage";
 
 const RoutesConfig = () => (
   <Routes>
@@ -20,6 +22,8 @@ const RoutesConfig = () => (
     <Route path="/profile" element={<ProfilePage />} />
     <Route path="/messages" element={<MessagesPage />} />
     <Route path="/notifications" element={<NotificationPage />} />
+    <Route path="/login" element={<LoginPage />} />
+    <Route path="/register" element={<RegisterUserPage />} />
   </Routes>
 );
 
