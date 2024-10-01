@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Box, Typography } from "@mui/material";
 import BoxSectionsInfo from "./components/BoxSectionsInfo/BoxSectionsInfo";
+import AboutUsListItem from "./components/AboutUsListItem/AboutUsListItem";
 
 const HomeViewComponent = () => {
   const { t } = useTranslation();
@@ -54,62 +55,26 @@ const HomeViewComponent = () => {
           <Typography
             textAlign="center"
             color="white"
-            fontSize={32}
+            fontSize={36}
             variant="h3"
           >
             Mueve tus cargas de manera simple y segura con Powerload
           </Typography>
           <Box border="1px solid white" padding={4} marginTop={5}>
             <ul>
-              <li>
-                <img
-                  src={"../../../public/images/icons/item.svg"}
-                  alt="icon"
-                  style={{ width: "20px", height: "20px" }}
-                />
-                <Typography color="white" fontSize={18}>
-                  Obtén cotizaciones instantáneas en 3 pasos y realiza envíos al
-                  día siguiente.
-                </Typography>
-              </li>
-              <li>
-                <img
-                  src={"../../../public/images/icons/item.svg"}
-                  alt="icon"
-                  style={{ width: "20px", height: "20px" }}
-                />
-                Localiza cargas, gasolineras y servicios en un radio de hasta
-                200 km con nuestro sistema GPS.
-              </li>
-              <li>
-                <img
-                  src={"../../../public/images/icons/item.svg"}
-                  alt="icon"
-                  style={{ width: "20px", height: "20px" }}
-                />
-                Disfruta de soporte y monitoreo 24/7 para una experiencia sin
-                preocupaciones.
-              </li>
-              <li>
-                <img
-                  src={"../../../public/images/icons/item.svg"}
-                  alt="icon"
-                  style={{ width: "20px", height: "20px" }}
-                />
-                Crea una cuenta gratuita y optimiza tus envíos con nuestra
-                tecnología avanzada en toda Europa.
-              </li>
+              <AboutUsListItem text="Obtén cotizaciones instantáneas en 3 pasos y realiza envíos al día siguiente." />
+              <AboutUsListItem text="Localiza cargas, gasolineras y servicios en un radio de hasta 200 km con nuestro sistema GPS." />
+              <AboutUsListItem text="Disfruta de soporte y monitoreo 24/7 para una experiencia sin preocupaciones." />
+              <AboutUsListItem text="Crea una cuenta gratuita y optimiza tus envíos con nuestra tecnología avanzada en toda Europa." />
             </ul>
           </Box>
+          <Typography textAlign="center" color="white" fontSize={28} marginTop={5} >
+            {t("Aprovecha las ventajas y ahorros para Transportista")}
+          </Typography>
+          <Typography textAlign="center" color="white" fontSize={28}>
+            {t("¡Comienza hoy y transforma la forma como haces tus envíos!")}
+          </Typography>
         </Box>
-      </Box>
-      <Box maxWidth="1400px" mx="auto">
-        <Typography>
-          {t("Aprovecha las ventajas y ahorros para Transportista")}
-        </Typography>
-        <Typography>
-          {t("¡Comienza hoy y transforma la forma como haces tus envíos!")}
-        </Typography>
       </Box>
       <Box
         display="flex"
@@ -128,13 +93,13 @@ const HomeViewComponent = () => {
           justifyContent="center"
           alignContent="center"
         >
-          <Box>
+          <Box >
             <img
               src={"../../../public/images/como_funciona1.svg"}
               alt="icon"
               style={{ width: "125px", height: "125px" }}
             />
-            <Typography>
+            <Typography >
               {t("Regístrate y obten acceso a la plataforma.")}
             </Typography>
           </Box>
