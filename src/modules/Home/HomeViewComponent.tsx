@@ -34,17 +34,17 @@ const HomeViewComponent = () => {
         gap={2}
       >
         <BoxSectionsInfo
-          urlImg="../../../public/images/cargadores.svg"
+          imgName="cargadores.svg"
           title="Para cargadores"
           subtitle="Encuentra a alguien que lleve tu carga al mejor precio."
         />
         <BoxSectionsInfo
-          urlImg="../../../public/images/transportistas.svg"
+          imgName="transportistas.svg"
           title="Para Transportistas"
           subtitle="Busca la mejor oferta de carga y comienza el viaje con nosotros."
         />
         <BoxSectionsInfo
-          urlImg="../../../public/images/colaboradores.svg"
+          imgName="colaboradores.svg"
           title="Para colaboradores"
           subtitle="Siempre estarás a tiempo para unirte a nosotros y promocionar tu
             negocio."
@@ -68,7 +68,12 @@ const HomeViewComponent = () => {
               <AboutUsListItem text="Crea una cuenta gratuita y optimiza tus envíos con nuestra tecnología avanzada en toda Europa." />
             </ul>
           </Box>
-          <Typography textAlign="center" color="white" fontSize={28} marginTop={5} >
+          <Typography
+            textAlign="center"
+            color="white"
+            fontSize={28}
+            marginTop={5}
+          >
             {t("Aprovecha las ventajas y ahorros para Transportista")}
           </Typography>
           <Typography textAlign="center" color="white" fontSize={28}>
@@ -93,13 +98,13 @@ const HomeViewComponent = () => {
           justifyContent="center"
           alignContent="center"
         >
-          <Box >
+          <Box>
             <img
               src={"../../../public/images/como_funciona1.svg"}
               alt="icon"
               style={{ width: "125px", height: "125px" }}
             />
-            <Typography >
+            <Typography>
               {t("Regístrate y obten acceso a la plataforma.")}
             </Typography>
           </Box>
