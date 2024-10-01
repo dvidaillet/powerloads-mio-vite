@@ -78,11 +78,9 @@ const LoadsTableComponent = () => {
     limit: paginationModel.pageSize,
   });
 
-  console.log("🚀 - LoadsTableComponent - data:", data);
   const handlePaginationChange = (newPaginationModel: GridPaginationModel) => {
     setPaginationModel(newPaginationModel);
   };
-  // if (isLoading) return <div>Cargando...</div>;
   if (error) return <div>Error al obtener las cargas</div>;
 
   return (
