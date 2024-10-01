@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Box, Typography } from "@mui/material";
+import { Box, CardMedia, Typography } from "@mui/material";
 import BoxSectionsInfo from "./components/BoxSectionsInfo/BoxSectionsInfo";
 import AboutUsListItem from "./components/AboutUsListItem/AboutUsListItem";
 
@@ -11,21 +11,59 @@ const HomeViewComponent = () => {
       <Box
         sx={{
           display: "flex",
-          alignItems: "center",
           justifyContent: "center",
+          alignItems: "center",
+          width: "100%",
+          height: "500px",
           marginBottom: 1,
           marginTop: "-5px",
+          position: "relative", // Necesario para el posicionamiento absoluto del texto
+          overflow: "hidden", // Para evitar desbordamientos
         }}
       >
-        <img
-          src={"../../../public/images/fondo_home_2.jpg"}
+        {/* Imagen usando CardMedia */}
+        <CardMedia
+          component="img"
+          image="../../../public/images/fondo_home_2.jpg"
           alt="icon"
-          style={{ width: "100%", height: "500px" }}
+          sx={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover", // Mantener proporciones sin distorsión
+          }}
         />
+
+        {/* Texto superpuesto con breakpoints */}
+        <Box
+          sx={{
+            position: "absolute",
+            padding: "20px",
+            color: "white",
+            textAlign: "left",
+            width: {
+              xs: "100%", // Ocupa el 100% del ancho en pantallas pequeñas
+              md: "50%", // Ocupa el 50% en pantallas medianas y grandes
+            },
+            left: {
+              xs: 0, // Sin margen en pantallas pequeñas
+              md: "20%", // Margen del 5% en pantallas grandes
+            },
+            top: "50%", // Centrar verticalmente el texto
+            transform: "translateY(-50%)", // Ajustar para centrar el texto verticalmente
+          }}
+        >
+          <Typography variant="h4" sx={{ fontWeight: "bold", marginBottom: 2 }}>
+            Regístrate y comienza a trabajar hoy.
+          </Typography>
+          <Typography variant="body1" sx={{ fontSize: "18px" }}>
+            Encuentra cargas, localiza gasolineras y recibe pagos en 24 horas,
+            todo mientras gestionas tus operaciones con facilidad.
+          </Typography>
+        </Box>
       </Box>
       <Box
         display="flex"
-        flexDirection="row"
+        flexDirection={{ xs: "column", md: "row" }}
         maxWidth="1400px"
         justifyContent="space-between"
         alignContent="center"
