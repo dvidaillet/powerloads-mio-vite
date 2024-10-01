@@ -1,11 +1,11 @@
-import PagesHeader from "../components/PagesHeader/PagesHeader";
 import HomeHorizontalPanel from "../components/HomeHorizontalPanel/HomeHorizontalPanel";
+import HomeViewComponent from "../modules/Home/HomeViewComponent";
 
 const HomePage = () => {
   return (
     <>
       <HomeHorizontalPanel />
-      <PagesHeader title="home.title" subtitle="home.description" />
+      <HomeViewComponent />
     </>
   );
 };
