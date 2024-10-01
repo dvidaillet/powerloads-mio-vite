@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { Box, Typography } from "@mui/material";
+import BoxSectionsInfo from "./components/BoxSectionsInfo/BoxSectionsInfo";
 
 const HomeViewComponent = () => {
   const { t } = useTranslation();
@@ -28,75 +29,78 @@ const HomeViewComponent = () => {
         justifyContent="space-between"
         alignContent="center"
         mx="auto"
+        my={10}
+        gap={2}
       >
-        <Box>
-          <img
-            src={"../../../public/images/cargadores.svg"}
-            alt="icon"
-            style={{ width: "150%", height: "250px" }}
-          />
-          <Typography>Para cargadores</Typography>
-        </Box>
-        <Box>
-          <img
-            src={"../../../public/images/transportistas.svg"}
-            alt="icon"
-            style={{ width: "250", height: "250px" }}
-          />
-          <Typography>Para cargadores</Typography>
-        </Box>
-        <Box>
-          <img
-            src={"../../../public/images/colaboradores.svg"}
-            alt="icon"
-            style={{ width: "250", height: "250px" }}
-          />
-          <Typography>Para cargadores</Typography>
-        </Box>
+        <BoxSectionsInfo
+          urlImg="../../../public/images/cargadores.svg"
+          title="Para cargadores"
+          subtitle="Encuentra a alguien que lleve tu carga al mejor precio."
+        />
+        <BoxSectionsInfo
+          urlImg="../../../public/images/transportistas.svg"
+          title="Para Transportistas"
+          subtitle="Busca la mejor oferta de carga y comienza el viaje con nosotros."
+        />
+        <BoxSectionsInfo
+          urlImg="../../../public/images/colaboradores.svg"
+          title="Para colaboradores"
+          subtitle="Siempre estarás a tiempo para unirte a nosotros y promocionar tu
+            negocio."
+        />
       </Box>
-      <Box maxWidth="1400px" mx="auto">
-        <Typography alignItems="center">
-          Mueve tus cargas de manera simple y segura con Powerload
-        </Typography>
-        <Box>
-          <ul>
-            <li>
-              <img
-                src={"../../../public/images/icons/item.svg"}
-                alt="icon"
-                style={{ width: "20px", height: "20px" }}
-              />
-              Obtén cotizaciones instantáneas en 3 pasos y realiza envíos al día
-              siguiente.
-            </li>
-            <li>
-              <img
-                src={"../../../public/images/icons/item.svg"}
-                alt="icon"
-                style={{ width: "20px", height: "20px" }}
-              />
-              Localiza cargas, gasolineras y servicios en un radio de hasta 200
-              km con nuestro sistema GPS.
-            </li>
-            <li>
-              <img
-                src={"../../../public/images/icons/item.svg"}
-                alt="icon"
-                style={{ width: "20px", height: "20px" }}
-              />
-              Disfruta de soporte y monitoreo 24/7 para una experiencia sin
-              preocupaciones.
-            </li>
-            <li>
-              <img
-                src={"../../../public/images/icons/item.svg"}
-                alt="icon"
-                style={{ width: "20px", height: "20px" }}
-              />
-              Crea una cuenta gratuita y optimiza tus envíos con nuestra
-              tecnología avanzada en toda Europa.
-            </li>
-          </ul>
+      <Box sx={{ backgroundColor: "#606062" }}>
+        <Box maxWidth="1400px" mx="auto" paddingTop={8} paddingBottom={8}>
+          <Typography
+            textAlign="center"
+            color="white"
+            fontSize={32}
+            variant="h3"
+          >
+            Mueve tus cargas de manera simple y segura con Powerload
+          </Typography>
+          <Box border="1px solid white" padding={4} marginTop={5}>
+            <ul>
+              <li>
+                <img
+                  src={"../../../public/images/icons/item.svg"}
+                  alt="icon"
+                  style={{ width: "20px", height: "20px" }}
+                />
+                <Typography color="white" fontSize={18}>
+                  Obtén cotizaciones instantáneas en 3 pasos y realiza envíos al
+                  día siguiente.
+                </Typography>
+              </li>
+              <li>
+                <img
+                  src={"../../../public/images/icons/item.svg"}
+                  alt="icon"
+                  style={{ width: "20px", height: "20px" }}
+                />
+                Localiza cargas, gasolineras y servicios en un radio de hasta
+                200 km con nuestro sistema GPS.
+              </li>
+              <li>
+                <img
+                  src={"../../../public/images/icons/item.svg"}
+                  alt="icon"
+                  style={{ width: "20px", height: "20px" }}
+                />
+                Disfruta de soporte y monitoreo 24/7 para una experiencia sin
+                preocupaciones.
+              </li>
+              <li>
+                <img
+                  src={"../../../public/images/icons/item.svg"}
+                  alt="icon"
+                  style={{ width: "20px", height: "20px" }}
+                />
+                Crea una cuenta gratuita y optimiza tus envíos con nuestra
+                tecnología avanzada en toda Europa.
+              </li>
+            </ul>
+          </Box>
         </Box>
       </Box>
       <Box maxWidth="1400px" mx="auto">
