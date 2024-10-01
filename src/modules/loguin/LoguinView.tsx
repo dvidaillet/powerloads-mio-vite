@@ -16,7 +16,7 @@ const LoguinView = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(loguinSchema), // Resolver de Yup para las validaciones
+    resolver: yupResolver(loguinSchema),
     defaultValues: {
       email: "juan@example.com",
       password: "1224456",
@@ -111,7 +111,7 @@ const LoguinView = () => {
         <Typography fontWeight={600}>Iniciar sesión</Typography>
       </Button>
       <Typography textAlign="center">
-        Tambien puede iniciar sesion con
+        Tambien puede iniciar sesión con
       </Typography>
       <Button
         color="inherit"
@@ -131,7 +131,7 @@ const LoguinView = () => {
         </Typography>
       </Button>
       <Typography textAlign="center">
-        No te has regiistrado?
+        No te has registrado?
         <FormsLinksButtons text="Registrarse" to="/register" />
       </Typography>
     </Box>

@@ -22,7 +22,7 @@ const RoutesConfig = () => (
     <Route path="/profile" element={<ProfilePage />} />
     <Route path="/messages" element={<MessagesPage />} />
     <Route path="/notifications" element={<NotificationPage />} />
-    <Route path="/login" element={<LoginPage />} />
+    <Route path="/loguin" element={<LoginPage />} />
     <Route path="/register" element={<RegisterUserPage />} />
   </Routes>
 );
