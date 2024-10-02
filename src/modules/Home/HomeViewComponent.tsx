@@ -75,53 +75,38 @@ const HomeViewComponent = () => {
         alignContent="center"
         sx={{ backgroundColor: "white" }}
       >
-        <Typography mx="auto" variant="h4" fontWeight={600} color="grey" my={3}>
-          {t("¿Cómo funciona?")}
+        <Typography
+          mx="auto"
+          variant="h4"
+          fontWeight={600}
+          color="grey"
+          my={8}
+          textAlign="center"
+        >
+          {t("¿Cómo funciona nuestra web?")}
         </Typography>
         <Box
           display="flex"
-          flexDirection="row"
+          flexDirection={{ xs: "column", md: "row" }}
           maxWidth="1400px"
           mx="auto"
-          justifyContent="center"
+          justifyContent="space-between"
           alignContent="center"
         >
           <HowWorkBox
             imgName="como_funciona1.svg"
             text={t("Regístrate y obten acceso a la plataforma.")}
           />
-          {/* <Box>
-            <img
-              src={"../../../public/images/como_funciona1.svg"}
-              alt="icon"
-              style={{ width: "125px", height: "125px" }}
-            />
-            <Typography>
-              {t("Regístrate y obten acceso a la plataforma.")}
-            </Typography>
-          </Box> */}
-          <Box>
-            <img
-              src={"../../../public/images/como_funciona2.svg"}
-              alt="icon"
-              style={{ width: "125px", height: "125px" }}
-            />
-            <Typography>
-              {t(
-                "Selecciona la ruta o transportista que se adapte a tus necesidades."
-              )}
-            </Typography>
-          </Box>
-          <Box>
-            <img
-              src={"../../../public/images/como_funciona3.svg"}
-              alt="icon"
-              style={{ width: "125px", height: "125px" }}
-            />
-            <Typography>
-              {t("Transporta, envía o recibe tu mercancía a tiempo.")}
-            </Typography>
-          </Box>
+          <HowWorkBox
+            imgName="como_funciona2.svg"
+            text={t(
+              "Selecciona la ruta o transportista que se adapte a tus necesidades."
+            )}
+          />
+          <HowWorkBox
+            imgName="como_funciona3.svg"
+            text={t("Transporta, envía o recibe tu mercancía a tiempo.")}
+          />
         </Box>
       </Box>
     </Box>

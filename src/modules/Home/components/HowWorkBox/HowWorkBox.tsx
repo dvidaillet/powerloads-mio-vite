@@ -22,13 +22,16 @@ const HowWorkBox = ({
       justifyContent="center"
       alignItems="center"
       gap={3}
+      marginBottom={4}
     >
       <img
         src={`${baseImagePath}${imgName}`}
         alt="icon"
         style={{ width: imgWidth, height: imgHeight }}
       />
-      <Typography>{text}</Typography>
+      <Typography fontSize={22} textAlign="center">
+        {text}
+      </Typography>
     </Box>
   );
 };
