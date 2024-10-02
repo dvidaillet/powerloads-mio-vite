@@ -1,66 +1,16 @@
 import { useTranslation } from "react-i18next";
-import { Box, CardMedia, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import BoxSectionsInfo from "./components/BoxSectionsInfo/BoxSectionsInfo";
 import AboutUsListItem from "./components/AboutUsListItem/AboutUsListItem";
+import FirstBox from "./components/FirstBox/FirstBox";
+import HowWorkBox from "./components/HowWorkBox/HowWorkBox";
 
 const HomeViewComponent = () => {
   const { t } = useTranslation();
 
   return (
     <Box>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100%",
-          height: "500px",
-          marginBottom: 1,
-          marginTop: "-5px",
-          position: "relative", // Necesario para el posicionamiento absoluto del texto
-          overflow: "hidden", // Para evitar desbordamientos
-        }}
-      >
-        {/* Imagen usando CardMedia */}
-        <CardMedia
-          component="img"
-          image="../../../public/images/fondo_home_2.jpg"
-          alt="icon"
-          sx={{
-            width: "100%",
-            height: "100%",
-            objectFit: "cover", // Mantener proporciones sin distorsión
-          }}
-        />
-
-        {/* Texto superpuesto con breakpoints */}
-        <Box
-          sx={{
-            position: "absolute",
-            padding: "20px",
-            color: "white",
-            textAlign: "left",
-            width: {
-              xs: "100%", // Ocupa el 100% del ancho en pantallas pequeñas
-              md: "50%", // Ocupa el 50% en pantallas medianas y grandes
-            },
-            left: {
-              xs: 0, // Sin margen en pantallas pequeñas
-              md: "20%", // Margen del 5% en pantallas grandes
-            },
-            top: "50%", // Centrar verticalmente el texto
-            transform: "translateY(-50%)", // Ajustar para centrar el texto verticalmente
-          }}
-        >
-          <Typography variant="h4" sx={{ fontWeight: "bold", marginBottom: 2 }}>
-            Regístrate y comienza a trabajar hoy.
-          </Typography>
-          <Typography variant="body1" sx={{ fontSize: "18px" }}>
-            Encuentra cargas, localiza gasolineras y recibe pagos en 24 horas,
-            todo mientras gestionas tus operaciones con facilidad.
-          </Typography>
-        </Box>
-      </Box>
+      <FirstBox />
       <Box
         display="flex"
         flexDirection={{ xs: "column", md: "row" }}
@@ -73,17 +23,17 @@ const HomeViewComponent = () => {
       >
         <BoxSectionsInfo
           imgName="cargadores.svg"
-          title="Para cargadores"
+          title={t("Para cargadores")}
           subtitle="Encuentra a alguien que lleve tu carga al mejor precio."
         />
         <BoxSectionsInfo
           imgName="transportistas.svg"
-          title="Para Transportistas"
+          title={t("Para Transportistas")}
           subtitle="Busca la mejor oferta de carga y comienza el viaje con nosotros."
         />
         <BoxSectionsInfo
           imgName="colaboradores.svg"
-          title="Para colaboradores"
+          title={t("Para colaboradores")}
           subtitle="Siempre estarás a tiempo para unirte a nosotros y promocionar tu
             negocio."
         />
@@ -136,7 +86,11 @@ const HomeViewComponent = () => {
           justifyContent="center"
           alignContent="center"
         >
-          <Box>
+          <HowWorkBox
+            imgName="como_funciona1.svg"
+            text={t("Regístrate y obten acceso a la plataforma.")}
+          />
+          {/* <Box>
             <img
               src={"../../../public/images/como_funciona1.svg"}
               alt="icon"
@@ -145,7 +99,7 @@ const HomeViewComponent = () => {
             <Typography>
               {t("Regístrate y obten acceso a la plataforma.")}
             </Typography>
-          </Box>
+          </Box> */}
           <Box>
             <img
               src={"../../../public/images/como_funciona2.svg"}
