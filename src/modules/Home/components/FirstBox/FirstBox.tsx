@@ -34,7 +34,7 @@ const FirstBox = () => {
           textAlign: "left",
           width: {
             xs: "100%", // Ocupa el 100% del ancho en pantallas pequeñas
-            md: "50%", // Ocupa el 50% en pantallas medianas y grandes
+            md: "30%", // Ocupa el 50% en pantallas medianas y grandes
           },
           left: {
             xs: 0, // Sin margen en pantallas pequeñas
@@ -44,10 +44,10 @@ const FirstBox = () => {
           transform: "translateY(-50%)", // Ajustar para centrar el texto verticalmente
         }}
       >
-        <Typography variant="h4" sx={{ fontWeight: "bold", marginBottom: 2 }}>
+        <Typography variant="h4" sx={{ fontWeight: "bold", marginBottom: 2,fontSize: "44px"  }}>
           Regístrate y comienza a trabajar hoy.
         </Typography>
-        <Typography variant="body1" sx={{ fontSize: "18px" }}>
+        <Typography variant="body1" sx={{ fontSize: "24px" }}>
           Encuentra cargas, localiza gasolineras y recibe pagos en 24 horas,
           todo mientras gestionas tus operaciones con facilidad.
         </Typography>

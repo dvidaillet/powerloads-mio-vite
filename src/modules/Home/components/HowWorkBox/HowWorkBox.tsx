@@ -21,6 +21,7 @@ const HowWorkBox = ({
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
+      width="100%"
       gap={3}
       marginBottom={4}
     >

@@ -37,7 +37,7 @@ const HomeHorizontalPanel = () => {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: "#F3F4F9" }}>
+    <AppBar position="static" sx={{ backgroundColor: "#F3F4F9", height:"90px" }}>
       <Toolbar
         sx={{ display: "flex", justifyContent: "space-between" }}
         className="home-panel-container"
@@ -58,7 +58,7 @@ const HomeHorizontalPanel = () => {
             <img
               src={"../../../public/images/logo_powerload_black.png"}
               alt="icon"
-              style={{ width: "220px", height: "35px" }}
+              style={{ width: "250px", height: "32px" }}
             />
           </Box>
         </Button>
