@@ -262,6 +262,32 @@ const HomeViewComponent = () => {
           }}
         />
       </Box>
+      <Box paddingTop={8} maxWidth={900} mx="auto" paddingBottom={8}>
+        <Typography
+          textAlign="center"
+          fontSize={36}
+          fontWeight={300}
+          color="grey"
+        >
+          {t("Contacta con nosotros")}
+        </Typography>
+        <Typography fontSize={22} fontWeight={500} color="grey">
+          {t("headerColumns.email")}:
+          <Button variant="text">info@powerload.eu</Button>
+        </Typography>
+        <Box>Form</Box>
+      </Box>
+      <Box>
+        <CardMedia
+          image="/public/images/footer.jpg"
+          component="img"
+          sx={{
+            maxWidth: "100%",
+            maxHeight: "350px",
+            objectFit: "cover",
+          }}
+        />
+      </Box>
     </Box>
   );
 };
