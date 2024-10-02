@@ -271,19 +271,23 @@ const HomeViewComponent = () => {
         >
           {t("Contacta con nosotros")}
         </Typography>
-        <Typography fontSize={22} fontWeight={500} color="grey">
+        <Typography fontSize={18} fontWeight={600} color="black">
           {t("headerColumns.email")}:
           <Button variant="text">info@powerload.eu</Button>
         </Typography>
         <Box>Form</Box>
       </Box>
-      <Box>
+      <Box
+        sx={{
+          height: "350px",
+        }}
+      >
         <CardMedia
           image="/public/images/footer.jpg"
           component="img"
           sx={{
-            maxWidth: "100%",
-            maxHeight: "350px",
+            width: "100%",
+            height: "100%",
             objectFit: "cover",
           }}
         />
